@@ -2014,7 +2014,7 @@ export const ResumeForm: React.FC = () => {
                       </div>
                     </div>
                     <textarea
-                      rows={3}
+                      rows={8}
                       placeholder="Describe your contributions & impact..."
                       value={exp.description}
                       onChange={(e) =>
@@ -2094,7 +2094,7 @@ export const ResumeForm: React.FC = () => {
                       />
                     </div>
                     <textarea
-                      rows={2}
+                      rows={7}
                       placeholder="Key achievements or features built..."
                       value={proj.description}
                       onChange={(e) =>

@@ -3,11 +3,11 @@
 import React from 'react';
 import { ResumeData } from '@/types/resume';
 
-interface FutureForwardProps {
+interface CleanEdgeProps {
   data: ResumeData;
 }
 
-export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
+export const CleanEdge: React.FC<CleanEdgeProps> = ({ data }) => {
   const {
     personal = {
       fullName: '',
@@ -27,13 +27,19 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
     certificates = [],
   } = data || {};
 
-  // Build contact items
+  // Build contact links
   const contactLinks: React.ReactNode[] = [];
 
-  if (personal.phone) contactLinks.push(<span key="phone">{personal.phone}</span>);
+  if (personal.phone) {
+    contactLinks.push(<span key="phone">{personal.phone}</span>);
+  }
   if (personal.email) {
     contactLinks.push(
-      <a key="email" href={`mailto:${personal.email}`} className="text-[#4f46e5] hover:underline">
+      <a
+        key="email"
+        href={`mailto:${personal.email}`}
+        className="text-[#334155] hover:underline"
+      >
         {personal.email}
       </a>
     );
@@ -42,10 +48,14 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
     contactLinks.push(
       <a
         key="linkedin"
-        href={personal.linkedin.startsWith('http') ? personal.linkedin : `https://${personal.linkedin}`}
+        href={
+          personal.linkedin.startsWith('http')
+            ? personal.linkedin
+            : `https://${personal.linkedin}`
+        }
         target="_blank"
         rel="noreferrer"
-        className="text-[#4f46e5] hover:underline"
+        className="text-[#334155] hover:underline"
       >
         LinkedIn
       </a>
@@ -55,10 +65,14 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
     contactLinks.push(
       <a
         key="github"
-        href={personal.github.startsWith('http') ? personal.github : `https://${personal.github}`}
+        href={
+          personal.github.startsWith('http')
+            ? personal.github
+            : `https://${personal.github}`
+        }
         target="_blank"
         rel="noreferrer"
-        className="text-[#4f46e5] hover:underline"
+        className="text-[#334155] hover:underline"
       >
         GitHub
       </a>
@@ -68,46 +82,52 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
     contactLinks.push(
       <a
         key="website"
-        href={personal.website.startsWith('http') ? personal.website : `https://${personal.website}`}
+        href={
+          personal.website.startsWith('http')
+            ? personal.website
+            : `https://${personal.website}`
+        }
         target="_blank"
         rel="noreferrer"
-        className="text-[#4f46e5] hover:underline"
+        className="text-[#334155] hover:underline"
       >
         Portfolio
       </a>
     );
   }
-  if (personal.location) contactLinks.push(<span key="location">{personal.location}</span>);
+  if (personal.location) {
+    contactLinks.push(<span key="location">{personal.location}</span>);
+  }
 
   return (
     <div
       className="w-full bg-white text-slate-900 leading-tight box-border px-[12mm] py-[10mm] print:p-0 print:m-0 font-sans text-[10pt]"
       style={{
-        fontFamily: "'Space Grotesk', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         wordBreak: 'break-word',
         overflowWrap: 'break-word',
       }}
     >
-      {/* 1. Future-Forward Header */}
-      <header className="border-b-2 border-[#4f46e5] pb-2.5 mb-3 break-inside-avoid">
-        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-          <h1 className="text-[22pt] font-black uppercase tracking-tight text-slate-950 leading-none">
-            {personal.fullName || 'YOUR NAME'}
-          </h1>
-          {personal.jobTitle && (
-            <span className="text-[10.5pt] font-extrabold uppercase tracking-widest text-[#4f46e5]">
-              // {personal.jobTitle}
-            </span>
-          )}
-        </div>
+      {/* 1. Header with Border Frame Effect */}
+      <header className="border-l-4 border-slate-700 pl-3.5 pb-1 mb-3.5 break-inside-avoid">
+        <h1 className="text-[22pt] font-black uppercase tracking-tight text-slate-900 leading-none">
+          {personal.fullName || 'YOUR NAME'}
+        </h1>
+        {personal.jobTitle && (
+          <p className="text-[10.5pt] font-semibold uppercase tracking-widest text-slate-600 mt-1 mb-1.5">
+            {personal.jobTitle}
+          </p>
+        )}
 
         {contactLinks.length > 0 && (
-          <div className="mt-2 flex flex-wrap items-center text-[9pt] text-slate-600 font-medium">
+          <div className="flex flex-wrap items-center text-[9pt] text-slate-600">
             {contactLinks.map((item, idx) => (
               <React.Fragment key={idx}>
-                <span className="whitespace-nowrap inline-flex items-center">{item}</span>
+                <span className="whitespace-nowrap inline-flex items-center">
+                  {item}
+                </span>
                 {idx < contactLinks.length - 1 && (
-                  <span className="mx-2 text-[#4f46e5] font-bold select-none">/</span>
+                  <span className="mx-2 text-slate-400 select-none">▪</span>
                 )}
               </React.Fragment>
             ))}
@@ -115,13 +135,12 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
         )}
       </header>
 
-      {/* 2. Future Forward Summary */}
+      {/* 2. Professional Summary */}
       {personal.summary && (
         <section className="mb-3 break-inside-avoid">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="w-1.5 h-3.5 bg-[#4f46e5] rounded-sm"></span>
-            <h2 className="text-[10.5pt] font-black uppercase tracking-wider text-slate-900">
-              Profile Overview
+          <div className="flex items-center gap-2 mb-1">
+            <h2 className="text-[10.5pt] font-extrabold uppercase tracking-wider text-slate-800 bg-slate-100 px-2 py-0.5 rounded-sm border-l-2 border-slate-700">
+              Professional Summary
             </h2>
           </div>
           <p className="text-[9.5pt] leading-relaxed text-slate-700 text-justify">
@@ -130,16 +149,15 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
         </section>
       )}
 
-      {/* 3. Core Tech & Skills */}
+      {/* 3. Core Competencies & Skills */}
       {skills.length > 0 && (
         <section className="mb-3 break-inside-avoid">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="w-1.5 h-3.5 bg-[#4f46e5] rounded-sm"></span>
-            <h2 className="text-[10.5pt] font-black uppercase tracking-wider text-slate-900">
-              Technical Stack & Skills
+          <div className="flex items-center gap-2 mb-1.5">
+            <h2 className="text-[10.5pt] font-extrabold uppercase tracking-wider text-slate-800 bg-slate-100 px-2 py-0.5 rounded-sm border-l-2 border-slate-700">
+              Skills & Expertise
             </h2>
           </div>
-          <div className="space-y-1.5 text-[9.5pt] text-slate-800">
+          <div className="space-y-1 text-[9.5pt] text-slate-800">
             {skills.map((item: any, idx: number) => {
               if (typeof item === 'object' && item !== null) {
                 const categoryTitle = item.category || 'Skills';
@@ -151,10 +169,10 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
 
                 return (
                   <div key={item.id || idx} className="flex items-start">
-                    <span className="text-[#4f46e5] font-bold mr-2">›</span>
+                    <span className="text-slate-500 font-bold mr-1.5">›</span>
                     <p className="leading-snug">
-                      <strong className="font-bold text-slate-900">{categoryTitle}: </strong>
-                      <span className="text-slate-700">{skillsList}</span>
+                      <strong className="font-semibold text-slate-900">{categoryTitle}: </strong>
+                      <span>{skillsList}</span>
                     </p>
                   </div>
                 );
@@ -166,10 +184,10 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
                   const [category, skillsList] = item.split(/:(.+)/);
                   return (
                     <div key={idx} className="flex items-start">
-                      <span className="text-[#4f46e5] font-bold mr-2">›</span>
+                      <span className="text-slate-500 font-bold mr-1.5">›</span>
                       <p className="leading-snug">
-                        <strong className="font-bold text-slate-900">{category.trim()}: </strong>
-                        <span className="text-slate-700">{skillsList?.trim()}</span>
+                        <strong className="font-semibold text-slate-900">{category.trim()}: </strong>
+                        <span>{skillsList?.trim()}</span>
                       </p>
                     </div>
                   );
@@ -177,8 +195,8 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
 
                 return (
                   <div key={idx} className="flex items-start">
-                    <span className="text-[#4f46e5] font-bold mr-2">›</span>
-                    <span className="text-slate-700">{item}</span>
+                    <span className="text-slate-500 font-bold mr-1.5">›</span>
+                    <span>{item}</span>
                   </div>
                 );
               }
@@ -189,27 +207,27 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
         </section>
       )}
 
-      {/* 4. Professional Experience */}
+      {/* 4. Work Experience */}
       {experience.length > 0 && (
         <section className="mb-3">
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="w-1.5 h-3.5 bg-[#4f46e5] rounded-sm"></span>
-            <h2 className="text-[10.5pt] font-black uppercase tracking-wider text-slate-900">
-              Professional Experience
+          <div className="flex items-center gap-2 mb-2">
+            <h2 className="text-[10.5pt] font-extrabold uppercase tracking-wider text-slate-800 bg-slate-100 px-2 py-0.5 rounded-sm border-l-2 border-slate-700">
+              Work Experience
             </h2>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {experience.map((exp, idx) => (
               <div key={exp.id || idx} className="break-inside-avoid">
                 <div className="flex items-baseline justify-between text-[10pt]">
                   <span className="font-bold text-slate-900">
                     {exp.role}{' '}
-                    <span className="text-[#4f46e5] font-semibold">// {exp.company}</span>
+                    <span className="text-slate-500 font-normal">|</span>{' '}
+                    <span className="font-semibold text-slate-700">{exp.company}</span>
                     {exp.location && (
                       <span className="font-normal text-slate-500 text-[9pt]"> ({exp.location})</span>
                     )}
                   </span>
-                  <span className="font-semibold text-[8.5pt] text-slate-600 shrink-0 ml-2">
+                  <span className="font-semibold text-[9pt] text-slate-600 shrink-0 ml-2">
                     {exp.startDate} – {exp.current ? 'Present' : exp.endDate}
                   </span>
                 </div>
@@ -221,7 +239,7 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
                       .filter((line) => line.trim().length > 0)
                       .map((point, pIdx) => (
                         <div key={pIdx} className="flex items-start">
-                          <span className="text-[#4f46e5] font-bold mr-1.5">•</span>
+                          <span className="text-slate-500 font-bold mr-1.5">•</span>
                           <span>{point.replace(/^•\s*/, '')}</span>
                         </div>
                       ))}
@@ -236,20 +254,19 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
       {/* 5. Key Projects */}
       {projects && projects.length > 0 && (
         <section className="mb-3">
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="w-1.5 h-3.5 bg-[#4f46e5] rounded-sm"></span>
-            <h2 className="text-[10.5pt] font-black uppercase tracking-wider text-slate-900">
-              Featured Projects
+          <div className="flex items-center gap-2 mb-2">
+            <h2 className="text-[10.5pt] font-extrabold uppercase tracking-wider text-slate-800 bg-slate-100 px-2 py-0.5 rounded-sm border-l-2 border-slate-700">
+              Projects
             </h2>
           </div>
-          <div className="space-y-2.5">
+          <div className="space-y-2">
             {projects.map((proj, idx) => (
               <div key={proj.id || idx} className="break-inside-avoid">
                 <div className="text-[10pt]">
-                  <span className="font-bold text-slate-950">{proj.name}</span>
+                  <span className="font-bold text-slate-900">{proj.name}</span>
                   {proj.technologies && (
-                    <span className="text-[#4f46e5] font-medium text-[9pt]">
-                      {' '}— [{proj.technologies}]
+                    <span className="text-slate-500 font-normal text-[9pt]">
+                      {' '}— {proj.technologies}
                     </span>
                   )}
                 </div>
@@ -261,7 +278,7 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
                       .filter((line) => line.trim().length > 0)
                       .map((line, pIdx) => (
                         <div key={pIdx} className="flex items-start">
-                          <span className="text-[#4f46e5] font-bold mr-1.5">•</span>
+                          <span className="text-slate-500 font-bold mr-1.5">•</span>
                           <span>{line.replace(/^•\s*/, '')}</span>
                         </div>
                       ))}
@@ -276,9 +293,8 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
       {/* 6. Education */}
       {education.length > 0 && (
         <section className="mb-3">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="w-1.5 h-3.5 bg-[#4f46e5] rounded-sm"></span>
-            <h2 className="text-[10.5pt] font-black uppercase tracking-wider text-slate-900">
+          <div className="flex items-center gap-2 mb-1.5">
+            <h2 className="text-[10.5pt] font-extrabold uppercase tracking-wider text-slate-800 bg-slate-100 px-2 py-0.5 rounded-sm border-l-2 border-slate-700">
               Education
             </h2>
           </div>
@@ -286,7 +302,7 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
             {education.map((edu, idx) => (
               <div key={edu.id || idx} className="break-inside-avoid">
                 <div className="flex justify-between items-baseline">
-                  <span className="font-bold text-slate-950">
+                  <span className="font-bold text-slate-900">
                     {edu.institution}
                     {(edu.degree || edu.fieldOfStudy) && (
                       <span className="font-normal text-slate-700">
@@ -296,13 +312,14 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
                     )}
                   </span>
                   {(edu.startDate || edu.endDate) && (
-                    <span className="font-semibold text-slate-600 shrink-0 ml-2 text-[8.5pt]">
-                      {edu.startDate ? `${edu.startDate} – ` : ''}{edu.endDate}
+                    <span className="font-semibold text-slate-600 shrink-0 ml-2 text-[9pt]">
+                      {edu.startDate ? `${edu.startDate} – ` : ''}
+                      {edu.endDate}
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-1.5 text-slate-500 text-[8.5pt]">
+                <div className="flex items-center gap-1.5 text-slate-500 text-[9pt]">
                   {edu.location && <span>{edu.location}</span>}
                   {edu.location && edu.score && <span>|</span>}
                   {edu.score && <span>GPA / Score: {edu.score}</span>}
@@ -316,9 +333,8 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
       {/* 7. Certifications */}
       {certificates && certificates.length > 0 && (
         <section className="mb-2">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="w-1.5 h-3.5 bg-[#4f46e5] rounded-sm"></span>
-            <h2 className="text-[10.5pt] font-black uppercase tracking-wider text-slate-900">
+          <div className="flex items-center gap-2 mb-1.5">
+            <h2 className="text-[10.5pt] font-extrabold uppercase tracking-wider text-slate-800 bg-slate-100 px-2 py-0.5 rounded-sm border-l-2 border-slate-700">
               Certifications
             </h2>
           </div>
@@ -330,7 +346,9 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
               >
                 <div>
                   <span className="font-bold text-slate-900">{cert.name}</span>
-                  {cert.issuer && <span className="text-slate-600"> — {cert.issuer}</span>}
+                  {cert.issuer && (
+                    <span className="text-slate-600"> — {cert.issuer}</span>
+                  )}
                   {cert.credentialUrl && (
                     <a
                       href={
@@ -340,14 +358,14 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
                       }
                       target="_blank"
                       rel="noreferrer"
-                      className="ml-1.5 text-[#4f46e5] text-[8.5pt] hover:underline font-medium"
+                      className="ml-1.5 text-slate-600 text-[8.5pt] underline hover:text-slate-900"
                     >
                       [View]
                     </a>
                   )}
                 </div>
                 {(cert.issueDate || cert.expirationDate) && (
-                  <span className="font-semibold text-[8.5pt] text-slate-600 shrink-0 ml-2">
+                  <span className="font-semibold text-[9pt] text-slate-600 shrink-0 ml-2">
                     {cert.issueDate}
                     {cert.expirationDate && !cert.doesNotExpire
                       ? ` – ${cert.expirationDate}`
@@ -363,4 +381,4 @@ export const FutureForward: React.FC<FutureForwardProps> = ({ data }) => {
   );
 };
 
-export default FutureForward;
+export default CleanEdge;

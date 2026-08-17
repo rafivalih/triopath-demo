@@ -13,7 +13,7 @@ import oracle from "../../app/images/companies/oracle.png";
 import adobe from "../../app/images/companies/adobe.png";
 import salesforce from "../../app/images/companies/salesforce.png";
 // import cisco from "../../app/images/companies/cisco.svg";
-import intel from "../../app/images/companies/intel.png";
+import intel from "../../app/images/companies/Intel.png";
 import accenture from "../../app/images/companies/Accenture.webp";
 import hcl from "../../app/images/companies/HCL-logo.png";
 import infosys from "../../app/images/companies/Infosys_logo.webp";
@@ -35,22 +35,6 @@ const companies = [
 	hcl,
 ];
 
-// const companies = [
-//   microsoft,
-//   amazon,
-//   apple,
-//   google,
-//   meta,
-//   ibm,
-//   oracle,
-//   adobe,
-//   salesforce,
-//   cisco,
-//   intel,
-//   accenture,
-//   tcs,
-//   infosys,
-// ];
 
 const marqueeCompanies = [...companies, ...companies];
 
