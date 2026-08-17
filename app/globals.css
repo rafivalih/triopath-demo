@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 231 69% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 231 69% 60%;
+    --chart-1: 222 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.75rem;
+
+    --navy: 222 47% 11%;
+    --navy-light: 222 40% 20%;
+    --navy-deep: 222 54% 8%;
+  }
+
+  .dark {
+    --background: 222 54% 8%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 231 69% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 231 69% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .premium-page-hero {
+    background-image: linear-gradient(90deg, rgba(247, 249, 252, 0.98) 0%, rgba(247, 249, 252, 0.88) 42%, rgba(247, 249, 252, 0.5) 100%), 
+    url('https://st2.depositphotos.com/1327777/10185/i/450/depositphotos_101857742-stock-photo-business-people-clapping-hands.jpg?auto=compress&cs=tinysrgb&w=1600');
+    min-height: 450px;
+    background-position: center;
+    background-size: cover;
+  }
+
+
+
+
+
+.premium-page-hero1 {
+  background-image: linear-gradient(
+      90deg, 
+      rgba(247, 249, 252, 0.70) 0%, 
+      rgba(247, 249, 252, 0.45) 45%, 
+      rgba(247, 249, 252, 0.20) 100%
+    ),
+    url('https://st2.depositphotos.com/1006899/8421/i/450/depositphotos_84219350-stock-photo-word-blog-suspended-by-ropes.jpg');
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.aboutus {
+      /* background-image: linear-gradient(90deg, rgba(247, 249, 252, 0.98) 0%, rgba(247, 249, 252, 0.88) 42%, rgba(247, 249, 252, 0.5) 100%),  */
+        background-image: linear-gradient(
+      90deg, 
+      rgba(247, 249, 252, 0.70) 0%, 
+      rgba(247, 249, 252, 0.45) 45%, 
+      rgba(247, 249, 252, 0.20) 100%
+    ),
+    url('https://t4.ftcdn.net/jpg/01/27/16/25/360_F_127162573_kcES41FWV2OOdI5GxdD4di6l4O8o0AZb.jpg');
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.resumebackground{
+      /* background-image: linear-gradient(90deg, rgba(247, 249, 252, 0.98) 0%, rgba(247, 249, 252, 0.88) 42%, rgba(247, 249, 252, 0.5) 100%),  */
+        background-image: linear-gradient(
+      90deg, 
+      rgba(247, 249, 252, 0.70) 0%, 
+      rgba(247, 249, 252, 0.45) 45%, 
+      rgba(247, 249, 252, 0.20) 100%
+    ),
+    url('https://img.magnific.com/free-vector/resume-cv-job-composition-with-flat-isolated-text-with-woman-paper-profiles-pinned-letters-vector-illustration_1284-84164.jpg?semt=ais_test_b&w=740&q=80');
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.success-stories {
+      /* background-image: linear-gradient(90deg, rgba(247, 249, 252, 0.98) 0%, rgba(247, 249, 252, 0.88) 42%, rgba(247, 249, 252, 0.5) 100%),  */
+        background-image: linear-gradient(
+      90deg, 
+      rgba(247, 249, 252, 0.70) 0%, 
+      rgba(247, 249, 252, 0.45) 45%, 
+      rgba(247, 249, 252, 0.20) 100%
+    ),
+    url('https://media.istockphoto.com/id/2275022871/vector/customer-reviews-with-positive-and-negative-comments-and-reviews.jpg?s=612x612&w=0&k=20&c=OpcdAglPqv_gV67nvDYiWaC4Yj8WplowyJCUwZ1YWiA=');
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.studymaterial {
+         background-image: linear-gradient(90deg, rgba(247, 249, 252, 0.98) 0%, rgba(247, 249, 252, 0.88) 42%, rgba(247, 249, 252, 0.5) 100%), 
+
+    url('https://png.pngtree.com/thumb_back/fh260/background/20220314/pngtree-warm-color-stationery-store-background-image_1049395.jpg');
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent;
+  }
+  .navy-gradient {
+    background: linear-gradient(135deg, hsl(222 54% 8%) 0%, hsl(222 47% 14%) 100%);
+  }
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  }
+  .shadow-premium {
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08), 0 1px 4px rgba(15, 23, 42, 0.04);
+  }
+  .shadow-navy {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+  }
+  .section-tight {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  @media (max-width: 640px) {
+    .section-tight {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+  }
+}
+
+@layer utilities {
+  .slide-hover {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .slide-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: -1;
+  }
+  .slide-hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 60%);
+  }
+  .slide-hover:hover::before,
+  .slide-hover:hover::after {
+    transform: translateY(0);
+  }
+  .slide-hover .slide-hover-label {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .slide-hover:hover .slide-hover-label {
+    transform: translateY(-2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slide-hover::before,
+    .slide-hover::after,
+    .slide-hover .slide-hover-label {
+      transition: none;
+      transform: none;
+    }
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #resume-print-preview,
+  #resume-print-preview * {
+    visibility: visible !important;
+  }
+  #resume-print-preview {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-width: none !important;
+    aspect-ratio: auto !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(222 20% 80%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(222 20% 70%);
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
