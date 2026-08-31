@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import { Footer } from "@/components/layout/Footer";
+import { usePathname } from 'next/navigation';
+import { Footer } from '@/components/layout/Footer';
 
 export function ConditionalFooter() {
 	const pathname = usePathname();
 
 	// Hide only the Footer when on the builder page
-	if (pathname?.startsWith("/resume/builder")) {
+	if (pathname?.startsWith('/resume/builder')) {
 		return null;
 	}
 

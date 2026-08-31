@@ -1,126 +1,181 @@
 import type { Service } from '@/types';
 
 export const careerAccelerationServices: Service[] = [
-  {
-    id: 'career-guidance',
-    icon: 'Compass',
-    title: 'Career Guidance',
-    description: 'Personalized career roadmaps tailored to your goals, strengths, and industry trends.',
-    features: ['1-on-1 mentoring', 'Industry analysis', 'Goal setting', 'Career roadmap'],
-  },
-  {
-    id: 'resume-optimization',
-    icon: 'FileText',
-    title: 'Resume Optimization',
-    description: 'ATS-friendly resumes that get past filters and impress recruiters.',
-    features: ['ATS optimization', 'Keyword matching', 'Professional formatting', 'Content review'],
-  },
-  {
-    id: 'interview-preparation',
-    icon: 'MessageSquare',
-    title: 'Interview Preparation',
-    description: 'Mock interviews, behavioral coaching, and technical question practice.',
-    features: ['Mock interviews', 'Behavioral coaching', 'Technical practice', 'Feedback reports'],
-  },
-  {
-    id: 'skill-development',
-    icon: 'TrendingUp',
-    title: 'Skill Development',
-    description: 'Upskill with curated learning paths aligned to market demand.',
-    features: ['Learning paths', 'Hands-on projects', 'Skill assessment', 'Certification prep'],
-  },
-  {
-    id: 'job-search-assistance',
-    icon: 'Search',
-    title: 'Job Search Assistance',
-    description: 'Strategic job search support with targeted applications and follow-ups.',
-    features: ['Job matching', 'Application strategy', 'Follow-up templates', 'Market insights'],
-  },
-  {
-    id: 'career-consultation',
-    icon: 'Lightbulb',
-    title: 'Career Consultation',
-    description: 'Expert advice on career transitions, promotions, and industry shifts.',
-    features: ['Transition planning', 'Salary negotiation', 'Industry insights', 'Action plan'],
-  },
-  {
-    id: 'jd-analysis',
-    icon: 'ClipboardList',
-    title: 'Job Description Analysis',
-    description: 'Deep analysis of job descriptions to identify key requirements and keywords.',
-    features: ['Keyword extraction', 'Requirement analysis', 'Gap identification', 'Match scoring'],
-  },
-  {
-    id: 'resume-keyword-matching',
-    icon: 'Key',
-    title: 'Resume Keyword Matching',
-    description: 'Match your resume keywords to job descriptions for higher selection rates.',
-    features: ['Keyword scanning', 'Match percentage', 'Gap analysis', 'Optimization tips'],
-  },
+	{
+		id: 'career-consultation',
+		icon: 'Lightbulb',
+		title: 'Career Consultation',
+		description: 'Expert advice on career transitions, promotions, and industry shifts.',
+		features: ['Transition planning', 'Salary negotiation', 'Industry insights', 'Action plan'],
+	},
+	{
+		id: 'career-guidance',
+		icon: 'Compass',
+		title: 'Career Guidance',
+		description:
+			'Personalized career roadmaps tailored to your goals, strengths, and industry trends.',
+		features: ['1-on-1 mentoring', 'Industry analysis', 'Goal setting', 'Career roadmap'],
+	},
+	{
+		id: 'resume-optimization',
+		icon: 'FileText',
+		title: 'Resume Optimization',
+		description: 'ATS-friendly resumes that get past filters and impress recruiters.',
+		features: ['ATS optimization', 'Keyword matching', 'Professional formatting', 'Content review'],
+	},
+	{
+		id: 'interview-preparation',
+		icon: 'MessageSquare',
+		title: 'Interview Preparation',
+		description: 'Mock interviews, behavioral coaching, and technical question practice.',
+		features: ['Mock interviews', 'Behavioral coaching', 'Technical practice', 'Feedback reports'],
+	},
+	{
+		id: 'skill-development',
+		icon: 'TrendingUp',
+		title: 'Skill Development',
+		description: 'Upskill with curated learning paths aligned to market demand.',
+		features: ['Learning paths', 'Hands-on projects', 'Skill assessment', 'Certification prep'],
+	},
+	{
+		id: 'job-search-assistance',
+		icon: 'Search',
+		title: 'Job Search Assistance',
+		description: 'Strategic job search support with targeted applications and follow-ups.',
+		features: ['Job matching', 'Application strategy', 'Follow-up templates', 'Market insights'],
+	},
+
+	{
+		id: 'jd-analysis',
+		icon: 'ClipboardList',
+		title: 'Job Description Analysis',
+		description: 'Deep analysis of job descriptions to identify key requirements and keywords.',
+		features: ['Keyword extraction', 'Requirement analysis', 'Gap identification', 'Match scoring'],
+	},
+	{
+		id: 'resume-keyword-matching',
+		icon: 'Key',
+		title: 'Resume Keyword Matching',
+		description: 'Match your resume keywords to job descriptions for higher selection rates.',
+		features: ['Keyword scanning', 'Match percentage', 'Gap analysis', 'Optimization tips'],
+	},
 ];
 
 export const recruitmentServices: Service[] = [
-  {
-    id: 'talent-sourcing',
-    icon: 'Users',
-    title: 'Talent Sourcing',
-    description: 'Access a curated pool of qualified candidates across multiple industries and job roles.',
-    features: ['Candidate sourcing', 'Multi-channel recruitment', 'Profile discovery', 'Talent pipeline building'],
-  },
-  {
-    id: 'candidate-screening',
-    icon: 'Filter',
-    title: 'Candidate Screening',
-    description: 'Evaluate candidate profiles against job requirements to identify relevant and qualified applicants.',
-    features: ['Resume screening', 'Skills assessment', 'Experience verification', 'Requirement analysis'],
-  },
-  {
-    id: 'recruitment',
-    icon: 'UserCheck',
-    title: 'Recruitment',
-    description: 'End-to-end recruitment support from identifying candidates to coordinating interviews and hiring..',
-    features: ['Job requirement analysis', 'Candidate shortlisting', 'Interview coordination', 'Hiring support'],
-  },
-  {
-    id: 'staffing',
-    icon: 'Briefcase',
-    title: 'Staffing',
-    description: 'Flexible staffing solutions designed to support contract, permanent, and project-based hiring needs.',
-    features: ['Contract staffing', 'Permanent staffing', 'Temporary staffing', 'Project-based staffing'],
-  },
-  {
-    id: 'technical-hiring',
-    icon: 'Code',
-    title: 'Technical Hiring',
-    description: 'Specialized recruitment support for IT, engineering, data, and other technical roles..',
-    features: ['Technical skill screening', 'Technology matching', 'Domain expertise', 'Role-specific evaluation'],
-  },
-  {
-    id: 'candidate-matching',
-    icon: 'Link',
-    title: 'Candidate Matching',
-    description: 'Compare candidate resumes with job descriptions to identify how closely their profile matches the role.',
-    features: ['Resume-to-JD matching', 'Skill Skill comparison', 'Requirement matching', 'Candidate ranking'],
-  },
-  {
-    id: 'Keyword & Experience Analysis',
-    icon: 'ClipboardList',
-    title: 'Keyword & Experience Analysis',
-    description: 'Analyze resumes and job descriptions to identify important skills, keywords, qualifications, and experience requirements.',
-    features: ['Keyword extraction', 'Skill gap identification', 'Experience comparison', 'Qualification analysis'],
-  },
-  {
-    id: 'Matching Score & Insights',
-    icon: 'BarChart3',
-    title: 'Matching Score & Insights',
-    description: 'Generate an overall matching score with clear insights explaining strengths, missing requirements, and areas affecting the candidates match.',
-    features: ['Overall match score', 'Matched skills', 'Experience gap', 'Reasons for lower score'],
-  },
-    {
-    id: 'employer-support',
-    icon: 'Headphones',
-    title: 'Employer Support',
-    description: 'Dedicated support for employers throughout the hiring process.',
-    features: ['Dedicated account manager', 'Hiring analytics', 'Market consultation', 'Process optimization'],
-  },
+	{
+		id: 'talent-sourcing',
+		icon: 'Users',
+		title: 'Talent Sourcing',
+		description:
+			'Access a curated pool of qualified candidates across multiple industries and job roles.',
+		features: [
+			'Candidate sourcing',
+			'Multi-channel recruitment',
+			'Profile discovery',
+			'Talent pipeline building',
+		],
+	},
+	{
+		id: 'candidate-screening',
+		icon: 'Filter',
+		title: 'Candidate Screening',
+		description:
+			'Evaluate candidate profiles against job requirements to identify relevant and qualified applicants.',
+		features: [
+			'Resume screening',
+			'Skills assessment',
+			'Experience verification',
+			'Requirement analysis',
+		],
+	},
+	{
+		id: 'recruitment',
+		icon: 'UserCheck',
+		title: 'Recruitment',
+		description:
+			'End-to-end recruitment support from identifying candidates to coordinating interviews and hiring..',
+		features: [
+			'Job requirement analysis',
+			'Candidate shortlisting',
+			'Interview coordination',
+			'Hiring support',
+		],
+	},
+	{
+		id: 'staffing',
+		icon: 'Briefcase',
+		title: 'Staffing',
+		description:
+			'Flexible staffing solutions designed to support contract, permanent, and project-based hiring needs.',
+		features: [
+			'Contract staffing',
+			'Permanent staffing',
+			'Temporary staffing',
+			'Project-based staffing',
+		],
+	},
+	{
+		id: 'technical-hiring',
+		icon: 'Code',
+		title: 'Technical Hiring',
+		description:
+			'Specialized recruitment support for IT, engineering, data, and other technical roles..',
+		features: [
+			'Technical skill screening',
+			'Technology matching',
+			'Domain expertise',
+			'Role-specific evaluation',
+		],
+	},
+	{
+		id: 'candidate-matching',
+		icon: 'Link',
+		title: 'Candidate Matching',
+		description:
+			'Compare candidate resumes with job descriptions to identify how closely their profile matches the role.',
+		features: [
+			'Resume-to-JD matching',
+			'Skill Skill comparison',
+			'Requirement matching',
+			'Candidate ranking',
+		],
+	},
+	{
+		id: 'Keyword & Experience Analysis',
+		icon: 'ClipboardList',
+		title: 'Keyword & Experience Analysis',
+		description:
+			'Analyze resumes and job descriptions to identify important skills, keywords, qualifications, and experience requirements.',
+		features: [
+			'Keyword extraction',
+			'Skill gap identification',
+			'Experience comparison',
+			'Qualification analysis',
+		],
+	},
+	{
+		id: 'Matching Score & Insights',
+		icon: 'BarChart3',
+		title: 'Matching Score & Insights',
+		description:
+			'Generate an overall matching score with clear insights explaining strengths, missing requirements, and areas affecting the candidates match.',
+		features: [
+			'Overall match score',
+			'Matched skills',
+			'Experience gap',
+			'Reasons for lower score',
+		],
+	},
+	{
+		id: 'employer-support',
+		icon: 'Headphones',
+		title: 'Employer Support',
+		description: 'Dedicated support for employers throughout the hiring process.',
+		features: [
+			'Dedicated account manager',
+			'Hiring analytics',
+			'Market consultation',
+			'Process optimization',
+		],
+	},
 ];

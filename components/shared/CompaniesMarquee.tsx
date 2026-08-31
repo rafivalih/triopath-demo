@@ -1,22 +1,21 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-
-import microsoft from "../../app/images/companies/microsoft.png";
-import amazon from "../../app/images/companies/amazon.png";
-import tcs from "../../app/images/companies/tcs-logo.png";
-import google from "../../app/images/companies/google-wordmark.svg";
-import nvidia from "../../app/images/companies/nvidia.jpg";
-import meta from "../../app/images/companies/meta.png";
-import ibm from "../../app/images/companies/ibm.png";
-import oracle from "../../app/images/companies/oracle.png";
-import adobe from "../../app/images/companies/adobe.png";
-import salesforce from "../../app/images/companies/salesforce.png";
+import Image from 'next/image';
+import accenture from '../../app/images/companies/Accenture.webp';
+import adobe from '../../app/images/companies/adobe.png';
+import amazon from '../../app/images/companies/amazon.png';
+import google from '../../app/images/companies/google-wordmark.svg';
+import hcl from '../../app/images/companies/HCL-logo.png';
+import infosys from '../../app/images/companies/Infosys_logo.webp';
 // import cisco from "../../app/images/companies/cisco.svg";
-import intel from "../../app/images/companies/Intel.png";
-import accenture from "../../app/images/companies/Accenture.webp";
-import hcl from "../../app/images/companies/HCL-logo.png";
-import infosys from "../../app/images/companies/Infosys_logo.webp";
+import intel from '../../app/images/companies/Intel.png';
+import ibm from '../../app/images/companies/ibm.png';
+import meta from '../../app/images/companies/meta.png';
+import microsoft from '../../app/images/companies/microsoft.png';
+import nvidia from '../../app/images/companies/nvidia.jpg';
+import oracle from '../../app/images/companies/oracle.png';
+import salesforce from '../../app/images/companies/salesforce.png';
+import tcs from '../../app/images/companies/tcs-logo.png';
 
 const companies = [
 	microsoft,
@@ -35,7 +34,6 @@ const companies = [
 	hcl,
 ];
 
-
 const marqueeCompanies = [...companies, ...companies];
 
 export default function CompaniesMarquee() {
@@ -46,23 +44,23 @@ export default function CompaniesMarquee() {
 					{/* Fixed Title */}
 					<div
 						className="
-              relative z-20 flex w-[150px] shrink-0 items-center
-              border-r border-black/10 bg-white px-4
-              sm:w-[210px] sm:px-6
-              lg:w-[300px] lg:px-8
+              relative z-20 flex w-[130px] shrink-0 items-center
+                bg-white px-4
+              sm:w-[180px] sm:px-2
+              lg:w-[220px] lg:px-3
             "
 					>
 						<div className="border-l-[4px] border-[#5368df] pl-3 sm:pl-4 lg:pl-5">
 							<h2
 								className="
-                  text-[15px] font-semibold leading-tight text-[#282828]
-                  sm:text-[20px]
-                  lg:text-[28px]
+                  text-[13px] font-semibold leading-tight text-[#282828]
+                  sm:text-[17px]
+                  lg:text-[22px]
                 "
 							>
-								Companies We
+								Companies
 								<br />
-								Apply To
+								We Apply To
 							</h2>
 						</div>
 					</div>
@@ -88,7 +86,7 @@ export default function CompaniesMarquee() {
                     flex h-full w-[130px] shrink-0 items-center
                     justify-center border-r border-black/10 px-4
                     sm:w-[170px] sm:px-5
-                    lg:w-[210px]
+                    lg:w-[190px] 
                   "
 								>
 									<div className="flex h-full w-full items-center justify-center">
@@ -96,12 +94,12 @@ export default function CompaniesMarquee() {
 											src={company}
 											alt=""
 											className="
-                        max-h-7
+                        max-h-6
                         max-w-[105px]
                         object-contain
-                        sm:max-h-8
+                        sm:max-h-7
                         sm:max-w-[130px]
-                        lg:max-h-9
+                        lg:max-h-[30px]
                         lg:max-w-[160px]
                       "
 										/>

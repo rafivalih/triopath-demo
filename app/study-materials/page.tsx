@@ -256,31 +256,27 @@
 //   );
 // }
 
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Download, Search, Star } from "lucide-react";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Reveal } from "@/components/shared/Reveal";
-import { Icon } from "@/components/shared/Icon";
-import { BorderTrail } from "@/components/core/border-trail";
-import { studyMaterials } from "@/constants/studyMaterials";
+import { Download, Search, Star } from 'lucide-react';
+import { useState } from 'react';
+import { BorderTrail } from '@/components/core/border-trail';
+import { Icon } from '@/components/shared/Icon';
+import { Reveal } from '@/components/shared/Reveal';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { studyMaterials } from '@/constants/studyMaterials';
 
 export default function StudyMaterialsPage() {
-	const [query, setQuery] = useState("");
-	const [activeCategory, setActiveCategory] = useState("All");
+	const [query, setQuery] = useState('');
+	const [activeCategory, setActiveCategory] = useState('All');
 
-	const categories = [
-		"All",
-		...Array.from(new Set(studyMaterials.map((m) => m.category))),
-	];
+	const categories = ['All', ...Array.from(new Set(studyMaterials.map((m) => m.category)))];
 	const filtered = studyMaterials.filter((m) => {
 		const matchesQuery =
 			m.title.toLowerCase().includes(query.toLowerCase()) ||
 			m.description.toLowerCase().includes(query.toLowerCase()) ||
 			m.category.toLowerCase().includes(query.toLowerCase());
-		const matchesCategory =
-			activeCategory === "All" || m.category === activeCategory;
+		const matchesCategory = activeCategory === 'All' || m.category === activeCategory;
 		return matchesQuery && matchesCategory;
 	});
 
@@ -297,8 +293,8 @@ export default function StudyMaterialsPage() {
 							Best notes for every course.
 						</h1>
 						<p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-							Comprehensive, well-structured study materials to help you prepare
-							for exams, interviews, and certifications.
+							Comprehensive, well-structured study materials to help you prepare for exams,
+							interviews, and certifications.
 						</p>
 					</Reveal>
 				</div>
@@ -333,8 +329,8 @@ export default function StudyMaterialsPage() {
 												onClick={() => setActiveCategory(cat)}
 												className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
 													activeCategory === cat
-														? "bg-primary text-white"
-														: "bg-white text-muted-foreground hover:bg-secondary"
+														? 'bg-primary text-white'
+														: 'bg-white text-muted-foreground hover:bg-secondary'
 												}`}
 											>
 												{cat}
@@ -348,8 +344,7 @@ export default function StudyMaterialsPage() {
 						{/* Study Cards Grid */}
 						<div>
 							<p className="mb-4 text-sm text-muted-foreground">
-								{filtered.length} {filtered.length === 1 ? "result" : "results"}{" "}
-								found
+								{filtered.length} {filtered.length === 1 ? 'result' : 'results'} found
 							</p>
 							{filtered.length === 0 ? (
 								<div className="rounded-2xl border border-border bg-[#f8fafc] p-12 text-center">
@@ -382,12 +377,12 @@ export default function StudyMaterialsPage() {
 														size={70}
 														transition={{
 															repeat: Infinity,
-															repeatType: "loop",
+															repeatType: 'loop',
 															duration: 3,
-															ease: "linear",
+															ease: 'linear',
 														}}
 														style={{
-															offsetPath: "rect(0% 100% 100% 0% round 16px)",
+															offsetPath: 'rect(0% 100% 100% 0% round 16px)',
 														}}
 													/>
 												)}
@@ -398,16 +393,13 @@ export default function StudyMaterialsPage() {
 															<Icon name={material.icon} className="h-5 w-5" />
 														</div>
 														<span className="flex items-center gap-1 text-xs font-medium text-amber-500">
-															<Star className="h-3.5 w-3.5 fill-amber-400" />{" "}
-															{material.rating}
+															<Star className="h-3.5 w-3.5 fill-amber-400" /> {material.rating}
 														</span>
 													</div>
 													<span className="mt-4 inline-block rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground">
 														{material.category}
 													</span>
-													<h3 className="mt-3 font-bold text-primary">
-														{material.title}
-													</h3>
+													<h3 className="mt-3 font-bold text-primary">{material.title}</h3>
 													<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
 														{material.description}
 													</p>
@@ -425,7 +417,7 @@ export default function StudyMaterialsPage() {
 														<div className="flex items-baseline gap-1.5">
 															{/* Active Price (Free or Numeric) */}
 															<span className="text-sm font-bold capitalize text-emerald-400">
-																{typeof material.price === "number"
+																{typeof material.price === 'number'
 																	? `$${material.price.toFixed(2)}`
 																	: material.price}
 															</span>

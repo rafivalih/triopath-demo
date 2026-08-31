@@ -1,31 +1,26 @@
+'use client';
 
-"use client";
-
-import Link from "next/link";
-import styled from "styled-components";
+import Link from 'next/link';
+import styled from 'styled-components';
 
 interface ButtonHoverProps {
-  text?: string;
-  href?: string;
-  className?:string;
+	text?: string;
+	href?: string;
+	className?: string;
 }
 
-const ButtonHover = ({
-  text = "Learn More",
-  href = "#",
-  className="",
-}: ButtonHoverProps) => {
-  return (
-    <StyledWrapper>
-      <Link href={href} className={`learn-more ${className}`}>
-        <span className="circle" aria-hidden="true">
-          <span className="icon arrow" />
-        </span>
+const ButtonHover = ({ text = 'Learn More', href = '#', className = '' }: ButtonHoverProps) => {
+	return (
+		<StyledWrapper>
+			<Link href={href} className={`learn-more ${className}`}>
+				<span className="circle" aria-hidden="true">
+					<span className="icon arrow" />
+				</span>
 
-        <span className="button-text">{text}</span>
-      </Link>
-    </StyledWrapper>
-  );
+				<span className="button-text">{text}</span>
+			</Link>
+		</StyledWrapper>
+	);
 };
 
 const StyledWrapper = styled.div`

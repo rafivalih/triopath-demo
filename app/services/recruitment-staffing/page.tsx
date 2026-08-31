@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { ArrowRight, Check } from "lucide-react";
-import { ButtonLink } from "@/components/shared/Button";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Reveal, Stagger, StaggerItem } from "@/components/shared/Reveal";
-import { Icon } from "@/components/shared/Icon";
-import { recruitmentServices } from "@/constants/services";
-import { ScrollReveal } from "@/components/shared/ScrollReveal";
-import Link from "next/link";
-import ButtonHover from "@/components/shared/ButtonHover";
+import { ArrowRight, Check } from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ButtonLink } from '@/components/shared/Button';
+import ButtonHover from '@/components/shared/ButtonHover';
+import { Icon } from '@/components/shared/Icon';
+import { Reveal, Stagger, StaggerItem } from '@/components/shared/Reveal';
+import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { recruitmentServices } from '@/constants/services';
 
 export const metadata: Metadata = {
-	title: "Recruitment & Staffing Services",
+	title: 'Recruitment & Staffing Services',
 	description:
-		"Talent sourcing, candidate screening, recruitment, staffing, technical hiring, and AI-powered candidate matching from TRIOPATH Careers.",
+		'Talent sourcing, candidate screening, recruitment, staffing, technical hiring, and AI-powered candidate matching from TRIOPATH Careers.',
 };
 
 export default function RecruitmentPage() {
@@ -29,9 +29,8 @@ export default function RecruitmentPage() {
 							Find the right talent, faster.
 						</h1>
 						<p className="mx-auto mt-6 max-w-2xl text-md leading-relaxed text-muted-foreground space-x-0">
-							From talent sourcing and screening to intelligent candidate
-							matching, we provide comprehensive recruitment and staffing
-							solutions tailored to your hiring needs..
+							From talent sourcing and screening to intelligent candidate matching, we provide
+							comprehensive recruitment and staffing solutions tailored to your hiring needs..
 						</p>
 						<div className="mt-8 flex flex-col gap-5 sm:flex-row justify-center">
 							<Link href="/contact#contact-form" className="w-full sm:w-auto">
@@ -52,12 +51,7 @@ export default function RecruitmentPage() {
 								</button>
 							</Link>
 
-							<ButtonLink
-								href="/pricing"
-								variant="outline"
-								size="lg"
-								className="slide-hover"
-							>
+							<ButtonLink href="/pricing" variant="outline" size="lg" className="slide-hover">
 								<span className="slide-hover-label">View Pricing</span>
 							</ButtonLink>
 						</div>
@@ -83,9 +77,7 @@ export default function RecruitmentPage() {
 											<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
 												<Icon name={service.icon} className="h-5 w-5" />
 											</div>
-											<h3 className="mt-5 font-semibold text-primary">
-												{service.title}
-											</h3>
+											<h3 className="mt-5 font-semibold text-primary">{service.title}</h3>
 											<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
 												{service.description}
 											</p>
@@ -95,8 +87,7 @@ export default function RecruitmentPage() {
 														key={f}
 														className="flex items-center gap-2 text-xs text-muted-foreground"
 													>
-														<Check className="h-3.5 w-3.5 text-emerald-500" />{" "}
-														{f}
+														<Check className="h-3.5 w-3.5 text-emerald-500" /> {f}
 													</li>
 												))}
 											</ul>
@@ -135,9 +126,7 @@ export default function RecruitmentPage() {
 									<div className="mt-8 grid gap-5 sm:grid-cols-2">
 										<div className="rounded-2xl border border-border bg-white p-5">
 											<p className="text-2xl font-bold text-primary">30+</p>
-											<p className="mt-1 text-sm text-muted-foreground">
-												Hiring partners trust us
-											</p>
+											<p className="mt-1 text-sm text-muted-foreground">Hiring partners trust us</p>
 										</div>
 										<div className="rounded-2xl border border-border bg-white p-5">
 											<p className="text-2xl font-bold text-primary">48 hrs</p>
@@ -147,15 +136,11 @@ export default function RecruitmentPage() {
 										</div>
 										<div className="rounded-2xl border border-border bg-white p-5">
 											<p className="text-2xl font-bold text-primary">92%</p>
-											<p className="mt-1 text-sm text-muted-foreground">
-												Retention after 6 months
-											</p>
+											<p className="mt-1 text-sm text-muted-foreground">Retention after 6 months</p>
 										</div>
 										<div className="rounded-2xl border border-border bg-white p-5">
 											<p className="text-2xl font-bold text-primary">5K+</p>
-											<p className="mt-1 text-sm text-muted-foreground">
-												Candidates in our pool
-											</p>
+											<p className="mt-1 text-sm text-muted-foreground">Candidates in our pool</p>
 										</div>
 									</div>
 									{/* <ButtonLink href="/contact#contact-form" className="mt-8">
@@ -182,26 +167,25 @@ export default function RecruitmentPage() {
 							Looking to build your team?
 						</h2>
 						<p className="mx-auto mt-4 max-w-xl text-white/60">
-							Partner with TRIOPATH Careers and access pre-screened, qualified
-							candidates.
+							Partner with TRIOPATH Careers and access pre-screened, qualified candidates.
 						</p>
 						<Link href="/contact#contact-form" className="w-full sm:w-auto">
-								<button className="group relative h-12 w-full sm:w-[200px] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[2px] mt-2 border-white/20">
-									<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
-										{/* Normal */}
-										<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
-											Contact our team
-											<ArrowRight className="ml-1.5 h-5 w-5" />
-										</span>
+							<button className="group relative h-12 w-full sm:w-[200px] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[2px] mt-2 border-white/20">
+								<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
+									{/* Normal */}
+									<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
+										Contact our team
+										<ArrowRight className="ml-1.5 h-5 w-5" />
+									</span>
 
-										{/* Hover */}
-										<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
-											Contact our team
-											<ArrowRight className="ml-1.5 h-5 w-5" />
-										</span>
-									</div>
-								</button>
-							</Link>
+									{/* Hover */}
+									<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
+										Contact our team
+										<ArrowRight className="ml-1.5 h-5 w-5" />
+									</span>
+								</div>
+							</button>
+						</Link>
 					</div>
 				</div>
 			</section>

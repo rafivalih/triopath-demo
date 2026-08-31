@@ -1,7 +1,3 @@
-
-
-
-
 // // 'use client';
 
 // // import React from 'react';
@@ -280,33 +276,6 @@
 // // };
 
 // // export default ModernClassic;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // "use client";
 
@@ -649,401 +618,346 @@
 
 // export default ModernTemplate;
 
+'use client';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"use client";
-
-import React from "react";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Linkedin,
-  Github,
-  Code,
-  ExternalLink,
-} from "lucide-react";
-import { ResumeData } from "@/types/resume";
+import { Code, ExternalLink, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import type React from 'react';
+import type { ResumeData } from '@/types/resume';
 
 interface ModernTemplateProps {
-  data: ResumeData;
+	data: ResumeData;
 }
 
 export const ModernTemplate: React.FC<ModernTemplateProps> = ({ data }) => {
-  const {
-    personal = {
-      fullName: "",
-      jobTitle: "",
-      email: "",
-      phone: "",
-      location: "",
-      website: "",
-      linkedin: "",
-      github: "",
-      summary: "",
-    },
-    experience = [],
-    education = [],
-    skills = [],
-    projects = [],
-  } = data || {};
+	const {
+		personal = {
+			fullName: '',
+			jobTitle: '',
+			email: '',
+			phone: '',
+			location: '',
+			website: '',
+			linkedin: '',
+			github: '',
+			summary: '',
+		},
+		experience = [],
+		education = [],
+		skills = [],
+		projects = [],
+	} = data || {};
 
-  return (
-    <div
-      className="min-h-[297mm] w-full bg-white font-sans text-sm leading-relaxed text-gray-800"
-      style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-    >
-      {/* 1. Header with Dark Slate Accent */}
-      <header className="mb-6 bg-slate-800 p-6 text-center text-white">
-        <h1 className="mb-1 text-2xl font-bold uppercase tracking-tight text-white">
-          {personal.fullName || "Your Name"}
-        </h1>
-        <p className="mb-4 text-base font-medium uppercase text-slate-300">
-          {personal.jobTitle || "Professional Title"}
-        </p>
+	return (
+		<div
+			className="min-h-[297mm] w-full bg-white font-sans text-sm leading-relaxed text-gray-800"
+			style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
+		>
+			{/* 1. Header with Dark Slate Accent */}
+			<header className="mb-6 bg-slate-800 p-6 text-center text-white">
+				<h1 className="mb-1 text-2xl font-bold uppercase tracking-tight text-white">
+					{personal.fullName || 'Your Name'}
+				</h1>
+				<p className="mb-4 text-base font-medium uppercase text-slate-300">
+					{personal.jobTitle || 'Professional Title'}
+				</p>
 
-        <div className="flex flex-wrap justify-center gap-2 text-xs text-slate-300">
-          {personal.phone && (
-            <span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
-              <Phone className="h-3 w-3" />
-              <a
-                href={`tel:${personal.phone.replace(/\s+/g, "")}`}
-                className="hover:text-white"
-              >
-                {personal.phone}
-              </a>
-            </span>
-          )}
-          {personal.email && (
-            <span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
-              <Mail className="h-3 w-3" />
-              <a
-                href={`mailto:${personal.email}`}
-                className="hover:text-white"
-              >
-                {personal.email}
-              </a>
-            </span>
-          )}
-          {personal.linkedin && (
-            <span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
-              <Linkedin className="h-3 w-3" />
-              <a
-                href={
-                  personal.linkedin.startsWith("http")
-                    ? personal.linkedin
-                    : `https://${personal.linkedin}`
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-white"
-              >
-                {personal.linkedin}
-              </a>
-            </span>
-          )}
-          {personal.github && (
-            <span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
-              <Github className="h-3 w-3" />
-              <a
-                href={
-                  personal.github.startsWith("http")
-                    ? personal.github
-                    : `https://${personal.github}`
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-white"
-              >
-                {personal.github}
-              </a>
-            </span>
-          )}
-          {personal.website && (
-            <span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
-              <Code className="h-3 w-3" />
-              <a
-                href={
-                  personal.website.startsWith("http")
-                    ? personal.website
-                    : `https://${personal.website}`
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-white"
-              >
-                {personal.website}
-              </a>
-            </span>
-          )}
-          {personal.location && (
-            <span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
-              <MapPin className="h-3 w-3" /> {personal.location}
-            </span>
-          )}
-        </div>
-      </header>
+				<div className="flex flex-wrap justify-center gap-2 text-xs text-slate-300">
+					{personal.phone && (
+						<span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
+							<Phone className="h-3 w-3" />
+							<a href={`tel:${personal.phone.replace(/\s+/g, '')}`} className="hover:text-white">
+								{personal.phone}
+							</a>
+						</span>
+					)}
+					{personal.email && (
+						<span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
+							<Mail className="h-3 w-3" />
+							<a href={`mailto:${personal.email}`} className="hover:text-white">
+								{personal.email}
+							</a>
+						</span>
+					)}
+					{personal.linkedin && (
+						<span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
+							<Linkedin className="h-3 w-3" />
+							<a
+								href={
+									personal.linkedin.startsWith('http')
+										? personal.linkedin
+										: `https://${personal.linkedin}`
+								}
+								target="_blank"
+								rel="noreferrer"
+								className="hover:text-white"
+							>
+								{personal.linkedin}
+							</a>
+						</span>
+					)}
+					{personal.github && (
+						<span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
+							<Github className="h-3 w-3" />
+							<a
+								href={
+									personal.github.startsWith('http')
+										? personal.github
+										: `https://${personal.github}`
+								}
+								target="_blank"
+								rel="noreferrer"
+								className="hover:text-white"
+							>
+								{personal.github}
+							</a>
+						</span>
+					)}
+					{personal.website && (
+						<span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
+							<Code className="h-3 w-3" />
+							<a
+								href={
+									personal.website.startsWith('http')
+										? personal.website
+										: `https://${personal.website}`
+								}
+								target="_blank"
+								rel="noreferrer"
+								className="hover:text-white"
+							>
+								{personal.website}
+							</a>
+						</span>
+					)}
+					{personal.location && (
+						<span className="flex items-center gap-1.5 rounded bg-slate-700/60 px-2.5 py-1">
+							<MapPin className="h-3 w-3" /> {personal.location}
+						</span>
+					)}
+				</div>
+			</header>
 
-      <div className="px-6 pb-6">
-        {/* 2. Professional Summary */}
-        {personal.summary && (
-          <section className="mb-6">
-            <h2 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
-              <span className="h-0.5 w-8 bg-slate-800"></span>
-              Professional Summary
-            </h2>
-            <p className="text-xs leading-relaxed text-gray-600">
-              {personal.summary}
-            </p>
-          </section>
-        )}
+			<div className="px-6 pb-6">
+				{/* 2. Professional Summary */}
+				{personal.summary && (
+					<section className="mb-6">
+						<h2 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
+							<span className="h-0.5 w-8 bg-slate-800"></span>
+							Professional Summary
+						</h2>
+						<p className="text-xs leading-relaxed text-gray-600">{personal.summary}</p>
+					</section>
+				)}
 
-        {/* 3. Two-Column Layout (2/3 Main + 1/3 Sidebar) */}
-        <div className="grid grid-cols-3 gap-6">
-          {/* Main Left Column: Experience & Projects */}
-          <div className="col-span-2 space-y-6">
-            {/* Experience */}
-            {experience.length > 0 && (
-              <section>
-                <h2 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
-                  <span className="h-0.5 w-8 bg-slate-800"></span>
-                  Experience
-                </h2>
-                <div className="space-y-4">
-                  {experience.map((exp, idx) => (
-                    <div
-                      key={exp.id || idx}
-                      className="relative border-l-2 border-slate-200 pl-4"
-                    >
-                      <div className="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-slate-800"></div>
-                      <div className="mb-1 flex items-baseline justify-between">
-                        <h3 className="text-xs font-bold text-gray-900">
-                          {exp.role}
-                        </h3>
-                        <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-500">
-                          {exp.startDate} -{" "}
-                          {exp.current ? "Present" : exp.endDate}
-                        </span>
-                      </div>
-                      <p className="mb-1.5 text-xs font-semibold text-slate-600">
-                        {exp.company}{" "}
-                        {exp.location ? `• ${exp.location}` : ""}
-                      </p>
+				{/* 3. Two-Column Layout (2/3 Main + 1/3 Sidebar) */}
+				<div className="grid grid-cols-3 gap-6">
+					{/* Main Left Column: Experience & Projects */}
+					<div className="col-span-2 space-y-6">
+						{/* Experience */}
+						{experience.length > 0 && (
+							<section>
+								<h2 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
+									<span className="h-0.5 w-8 bg-slate-800"></span>
+									Experience
+								</h2>
+								<div className="space-y-4">
+									{experience.map((exp, idx) => (
+										<div key={exp.id || idx} className="relative border-l-2 border-slate-200 pl-4">
+											<div className="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-slate-800"></div>
+											<div className="mb-1 flex items-baseline justify-between">
+												<h3 className="text-xs font-bold text-gray-900">{exp.role}</h3>
+												<span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-500">
+													{exp.startDate} - {exp.current ? 'Present' : exp.endDate}
+												</span>
+											</div>
+											<p className="mb-1.5 text-xs font-semibold text-slate-600">
+												{exp.company} {exp.location ? `• ${exp.location}` : ''}
+											</p>
 
-                      {exp.description && (
-                        <ul className="space-y-1 text-xs text-gray-600">
-                          {exp.description
-                            .split("\n")
-                            .filter((line) => line.trim().length > 0)
-                            .map((point, pIdx) => (
-                              <li key={pIdx} className="flex items-start gap-1.5">
-                                <span className="text-slate-400">▸</span>
-                                <span>{point.replace(/^•\s*/, "")}</span>
-                              </li>
-                            ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
+											{exp.description && (
+												<ul className="space-y-1 text-xs text-gray-600">
+													{exp.description
+														.split('\n')
+														.filter((line) => line.trim().length > 0)
+														.map((point, pIdx) => (
+															<li key={pIdx} className="flex items-start gap-1.5">
+																<span className="text-slate-400">▸</span>
+																<span>{point.replace(/^•\s*/, '')}</span>
+															</li>
+														))}
+												</ul>
+											)}
+										</div>
+									))}
+								</div>
+							</section>
+						)}
 
-            {/* Projects */}
-            {projects.length > 0 && (
-              <section>
-                <h2 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
-                  <span className="h-0.5 w-8 bg-slate-800"></span>
-                  Projects
-                </h2>
-                <div className="space-y-4">
-                  {projects.map((proj, idx) => (
-                    <div key={proj.id || idx}>
-                      <div className="mb-1 flex items-center gap-2">
-                        <h3 className="text-xs font-bold text-gray-900">
-                          {proj.name}
-                        </h3>
-                        {proj.technologies && (
-                          <span className="text-[11px] text-slate-500">
-                            – {proj.technologies}
-                          </span>
-                        )}
-                        {proj.link && (
-                          <span className="flex items-center gap-0.5 text-[11px] text-blue-600">
-                            <ExternalLink className="h-3 w-3" />
-                            <a
-                              href={
-                                proj.link.startsWith("http")
-                                  ? proj.link
-                                  : `https://${proj.link}`
-                              }
-                              target="_blank"
-                              rel="noreferrer"
-                              className="hover:underline"
-                            >
-                              Demo
-                            </a>
-                          </span>
-                        )}
-                      </div>
+						{/* Projects */}
+						{projects.length > 0 && (
+							<section>
+								<h2 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
+									<span className="h-0.5 w-8 bg-slate-800"></span>
+									Projects
+								</h2>
+								<div className="space-y-4">
+									{projects.map((proj, idx) => (
+										<div key={proj.id || idx}>
+											<div className="mb-1 flex items-center gap-2">
+												<h3 className="text-xs font-bold text-gray-900">{proj.name}</h3>
+												{proj.technologies && (
+													<span className="text-[11px] text-slate-500">– {proj.technologies}</span>
+												)}
+												{proj.link && (
+													<span className="flex items-center gap-0.5 text-[11px] text-blue-600">
+														<ExternalLink className="h-3 w-3" />
+														<a
+															href={
+																proj.link.startsWith('http') ? proj.link : `https://${proj.link}`
+															}
+															target="_blank"
+															rel="noreferrer"
+															className="hover:underline"
+														>
+															Demo
+														</a>
+													</span>
+												)}
+											</div>
 
-                      {proj.description && (
-                        <ul className="space-y-1 text-xs text-gray-600">
-                          {proj.description
-                            .split("\n")
-                            .filter((line) => line.trim().length > 0)
-                            .map((point, pIdx) => (
-                              <li key={pIdx} className="flex items-start gap-1.5">
-                                <span className="text-slate-400">▸</span>
-                                <span>{point.replace(/^•\s*/, "")}</span>
-                              </li>
-                            ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-          </div>
+											{proj.description && (
+												<ul className="space-y-1 text-xs text-gray-600">
+													{proj.description
+														.split('\n')
+														.filter((line) => line.trim().length > 0)
+														.map((point, pIdx) => (
+															<li key={pIdx} className="flex items-start gap-1.5">
+																<span className="text-slate-400">▸</span>
+																<span>{point.replace(/^•\s*/, '')}</span>
+															</li>
+														))}
+												</ul>
+											)}
+										</div>
+									))}
+								</div>
+							</section>
+						)}
+					</div>
 
-          {/* Right Sidebar: Education & Skills */}
-          <div className="space-y-6">
-            {/* Education */}
-            {education.length > 0 && (
-              <section>
-                <h2 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-800">
-                  Education
-                </h2>
-                <div className="space-y-2.5">
-                  {education.map((edu, idx) => (
-                    <div
-                      key={edu.id || idx}
-                      className="rounded-lg bg-slate-50 p-3"
-                    >
-                      <h3 className="text-xs font-bold text-gray-900">
-                        {edu.institution}
-                      </h3>
-                      <p className="text-xs text-slate-600">
-                        {edu.degree}
-                        {edu.fieldOfStudy ? ` in ${edu.fieldOfStudy}` : ""}
-                      </p>
-                      <p className="mt-1 text-[11px] text-slate-500">
-                        {edu.startDate} - {edu.endDate}{" "}
-                        {edu.score && `• ${edu.score}`}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
+					{/* Right Sidebar: Education & Skills */}
+					<div className="space-y-6">
+						{/* Education */}
+						{education.length > 0 && (
+							<section>
+								<h2 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-800">
+									Education
+								</h2>
+								<div className="space-y-2.5">
+									{education.map((edu, idx) => (
+										<div key={edu.id || idx} className="rounded-lg bg-slate-50 p-3">
+											<h3 className="text-xs font-bold text-gray-900">{edu.institution}</h3>
+											<p className="text-xs text-slate-600">
+												{edu.degree}
+												{edu.fieldOfStudy ? ` in ${edu.fieldOfStudy}` : ''}
+											</p>
+											<p className="mt-1 text-[11px] text-slate-500">
+												{edu.startDate} - {edu.endDate} {edu.score && `• ${edu.score}`}
+											</p>
+										</div>
+									))}
+								</div>
+							</section>
+						)}
 
-            {/* Skills & Competencies */}
-            {skills.length > 0 && (
-              <section>
-                <h2 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-800">
-                  Skills & Competencies
-                </h2>
-                <div className="space-y-3">
-                  {skills.map((item: any, idx: number) => {
-                    // Case 1: Structured Category Object ({ id, category, skills: string[] })
-                    if (typeof item === "object" && item !== null) {
-                      const categoryTitle = item.category || "Skills";
-                      const tags: string[] = Array.isArray(item.skills)
-                        ? item.skills
-                        : typeof item.skills === "string"
-                        ? item.skills.split(",").map((s: string) => s.trim()).filter(Boolean)
-                        : [];
+						{/* Skills & Competencies */}
+						{skills.length > 0 && (
+							<section>
+								<h2 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-800">
+									Skills & Competencies
+								</h2>
+								<div className="space-y-3">
+									{skills.map((item: any, idx: number) => {
+										// Case 1: Structured Category Object ({ id, category, skills: string[] })
+										if (typeof item === 'object' && item !== null) {
+											const categoryTitle = item.category || 'Skills';
+											const tags: string[] = Array.isArray(item.skills)
+												? item.skills
+												: typeof item.skills === 'string'
+													? item.skills
+															.split(',')
+															.map((s: string) => s.trim())
+															.filter(Boolean)
+													: [];
 
-                      if (tags.length === 0) return null;
+											if (tags.length === 0) return null;
 
-                      return (
-                        <div key={item.id || idx}>
-                          <p className="mb-1.5 text-[11px] font-bold text-slate-700">
-                            {categoryTitle}
-                          </p>
-                          <div className="flex flex-wrap gap-1">
-                            {tags.map((tag: string, tIdx: number) => (
-                              <span
-                                key={tIdx}
-                                className="rounded bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-white"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    }
+											return (
+												<div key={item.id || idx}>
+													<p className="mb-1.5 text-[11px] font-bold text-slate-700">
+														{categoryTitle}
+													</p>
+													<div className="flex flex-wrap gap-1">
+														{tags.map((tag: string, tIdx: number) => (
+															<span
+																key={tIdx}
+																className="rounded bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-white"
+															>
+																{tag}
+															</span>
+														))}
+													</div>
+												</div>
+											);
+										}
 
-                    // Case 2: String with Colon ("Programming: JS, Java")
-                    if (typeof item === "string" && item.includes(":")) {
-                      const [category, rawItems] = item.split(/:(.+)/);
-                      const tags = rawItems
-                        ? rawItems.split(",").map((s) => s.trim()).filter(Boolean)
-                        : [];
+										// Case 2: String with Colon ("Programming: JS, Java")
+										if (typeof item === 'string' && item.includes(':')) {
+											const [category, rawItems] = item.split(/:(.+)/);
+											const tags = rawItems
+												? rawItems
+														.split(',')
+														.map((s) => s.trim())
+														.filter(Boolean)
+												: [];
 
-                      return (
-                        <div key={idx}>
-                          <p className="mb-1.5 text-[11px] font-bold text-slate-700">
-                            {category.trim()}
-                          </p>
-                          <div className="flex flex-wrap gap-1">
-                            {tags.map((tag, tIdx) => (
-                              <span
-                                key={tIdx}
-                                className="rounded bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-white"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    }
+											return (
+												<div key={idx}>
+													<p className="mb-1.5 text-[11px] font-bold text-slate-700">
+														{category.trim()}
+													</p>
+													<div className="flex flex-wrap gap-1">
+														{tags.map((tag, tIdx) => (
+															<span
+																key={tIdx}
+																className="rounded bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-white"
+															>
+																{tag}
+															</span>
+														))}
+													</div>
+												</div>
+											);
+										}
 
-                    // Case 3: Fallback Single Skill Badge
-                    return (
-                      <span
-                        key={idx}
-                        className="mr-1 mb-1 inline-block rounded bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-white"
-                      >
-                        {typeof item === "string" ? item : String(item)}
-                      </span>
-                    );
-                  })}
-                </div>
-              </section>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+										// Case 3: Fallback Single Skill Badge
+										return (
+											<span
+												key={idx}
+												className="mr-1 mb-1 inline-block rounded bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-white"
+											>
+												{typeof item === 'string' ? item : String(item)}
+											</span>
+										);
+									})}
+								</div>
+							</section>
+						)}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default ModernTemplate;

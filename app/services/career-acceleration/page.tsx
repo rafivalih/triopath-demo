@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
-import { ButtonLink } from "@/components/shared/Button";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Reveal, Stagger, StaggerItem } from "@/components/shared/Reveal";
-import { Icon } from "@/components/shared/Icon";
-import { careerAccelerationServices } from "@/constants/services";
-import { AnimatedBackground } from "@/components/ui/animated-background";
+import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ButtonLink } from '@/components/shared/Button';
+import { Icon } from '@/components/shared/Icon';
+import { Reveal, Stagger, StaggerItem } from '@/components/shared/Reveal';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { AnimatedBackground } from '@/components/ui/animated-background';
+import { careerAccelerationServices } from '@/constants/services';
 
 export const metadata: Metadata = {
-	title: "Career Acceleration Services",
+	title: 'Career Acceleration Services',
 	description:
-		"Career guidance, resume optimization, interview preparation, skill development, job search assistance, and AI-powered job matching from TRIOPATH Careers.",
+		'Career guidance, resume optimization, interview preparation, skill development, job search assistance, and AI-powered job matching from TRIOPATH Careers.',
 };
 
 export default function CareerAccelerationPage() {
@@ -28,15 +28,11 @@ export default function CareerAccelerationPage() {
 							Accelerate your career with expert guidance.
 						</h1>
 						<p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-							From resume optimization to interview preparation, we provide
-							everything you need to land your next role — faster and with
-							confidence.
+							From resume optimization to interview preparation, we provide everything you need to
+							land your next role — faster and with confidence.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row justify-center">
-							<Link
-								href="/student/jobs"
-								className="slide-hover w-full sm:w-auto"
-							>
+							<Link href="/student/jobs" className="slide-hover w-full sm:w-auto">
 								<button className="group relative h-12 w-full sm:w-48 overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px]">
 									<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 										<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
@@ -74,26 +70,20 @@ export default function CareerAccelerationPage() {
 							<AnimatedBackground
 								className="rounded-2xl bg-[#f7f9fc] shadow-premium border border-accent/70"
 								transition={{
-									type: "spring",
+									type: 'spring',
 									bounce: 0.2,
 									duration: 0.6,
 								}}
 								enableHover
 							>
 								{careerAccelerationServices.map((service, index) => (
-									<div
-										key={service.id}
-										data-id={`page-service-${index}`}
-										className="h-full"
-									>
+									<div key={service.id} data-id={`page-service-${index}`} className="h-full">
 										<StaggerItem className="h-full">
 											<div className="group h-full rounded-2xl border border-border/60 bg-white/80 p-6 transition-all duration-300 hover:-translate-y-1">
 												<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
 													<Icon name={service.icon} className="h-5 w-5" />
 												</div>
-												<h3 className="mt-5 font-semibold text-primary">
-													{service.title}
-												</h3>
+												<h3 className="mt-5 font-semibold text-primary">{service.title}</h3>
 												<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
 													{service.description}
 												</p>
@@ -103,8 +93,7 @@ export default function CareerAccelerationPage() {
 															key={f}
 															className="flex items-center gap-2 text-xs text-muted-foreground"
 														>
-															<Check className="h-3.5 w-3.5 text-emerald-500" />{" "}
-															{f}
+															<Check className="h-3.5 w-3.5 text-emerald-500" /> {f}
 														</li>
 													))}
 												</ul>
@@ -131,10 +120,10 @@ export default function CareerAccelerationPage() {
 								/>
 								<ul className="mt-8 space-y-4">
 									{[
-										"Match percentage scoring",
-										"Identify matching and missing skills",
-										"Personalized skill recommendations",
-										"Real-time job market insights",
+										'Match percentage scoring',
+										'Identify matching and missing skills',
+										'Personalized skill recommendations',
+										'Real-time job market insights',
 									].map((item) => (
 										<li
 											key={item}
@@ -160,12 +149,10 @@ export default function CareerAccelerationPage() {
 									<button className="group relative h-12 w-[40%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] mt-6">
 										<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 											<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
-												Explore job opportunities{" "}
-												<ArrowUpRight className="ml-1.5 h-5 w-5" />
+												Explore job opportunities <ArrowUpRight className="ml-1.5 h-5 w-5" />
 											</span>
 											<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
-												Explore job opportunities{" "}
-												<ArrowRight className="ml-1.5 h-5 w-5" />
+												Explore job opportunities <ArrowRight className="ml-1.5 h-5 w-5" />
 											</span>
 										</div>
 									</button>
@@ -189,7 +176,7 @@ export default function CareerAccelerationPage() {
 											Matching Skills
 										</p>
 										<div className="mt-2 flex flex-wrap gap-2">
-											{["Java", "Spring Boot", "SQL"].map((s) => (
+											{['Java', 'Spring Boot', 'SQL'].map((s) => (
 												<span
 													key={s}
 													className="rounded-lg bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-700"
@@ -204,7 +191,7 @@ export default function CareerAccelerationPage() {
 											Missing Skills
 										</p>
 										<div className="mt-2 flex flex-wrap gap-2">
-											{["Docker", "AWS"].map((s) => (
+											{['Docker', 'AWS'].map((s) => (
 												<span
 													key={s}
 													className="rounded-lg bg-amber-500/10 px-3 py-1.5 text-xs font-medium text-amber-700"
@@ -235,12 +222,10 @@ export default function CareerAccelerationPage() {
 							<button className="group relative h-12 w-[20%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] mt-6">
 								<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 									<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
-										Schedule a consultation{" "}
-										<ArrowUpRight className="ml-1.5 h-5 w-5" />
+										Schedule a consultation <ArrowUpRight className="ml-1.5 h-5 w-5" />
 									</span>
 									<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
-										Schedule a consultation{" "}
-										<ArrowRight className="ml-1.5 h-5 w-5" />
+										Schedule a consultation <ArrowRight className="ml-1.5 h-5 w-5" />
 									</span>
 								</div>
 							</button>

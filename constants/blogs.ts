@@ -1,24 +1,22 @@
-
+import blog1 from '@/app/images/blog/blog1.png';
+import blog2 from '@/app/images/blog/blog2.png';
+import blog3 from '@/app/images/blog/blog3.png';
+import blog4 from '@/app/images/blog/blog4.png';
+import blog5 from '@/app/images/blog/blog5.webp';
+import blog6 from '@/app/images/blog/blog6.jpg';
+import blog7 from '@/app/images/blog/blog7.jpg';
+import blog8 from '@/app/images/blog/blog8.jpg';
+import blog9 from '@/app/images/blog/blog9.jpg';
 import type { BlogPost } from '@/types';
-import blog1 from "@/app/images/blog/blog1.png";
-import blog2 from "@/app/images/blog/blog2.png";
-import blog3 from "@/app/images/blog/blog3.png";
-import blog4 from "@/app/images/blog/blog4.png";
-import blog5 from "@/app/images/blog/blog5.webp";
-import blog6 from "@/app/images/blog/blog6.jpg";
-import blog7 from "@/app/images/blog/blog7.jpg";
-import blog8 from "@/app/images/blog/blog8.jpg";
-import blog9 from "@/app/images/blog/blog9.jpg";
-import blog10 from "../app/images/blog/blog10.png";
-
-
+import blog10 from '../app/images/blog/blog10.png';
 
 export const blogPosts: BlogPost[] = [
-  {
-    slug: 'future-of-ai-in-career-development',
-    title: 'The Future of AI in Career Development',
-    description: 'How artificial intelligence is reshaping career planning and recruitment across modern industries.',
-    content: `Artificial intelligence is no longer an emerging concept in career planning — it is actively transforming how professionals navigate career paths, develop in-demand skills, and secure high-growth opportunities across both IT and non-IT sectors.
+	{
+		slug: 'future-of-ai-in-career-development',
+		title: 'The Future of AI in Career Development',
+		description:
+			'How artificial intelligence is reshaping career planning and recruitment across modern industries.',
+		content: `Artificial intelligence is no longer an emerging concept in career planning — it is actively transforming how professionals navigate career paths, develop in-demand skills, and secure high-growth opportunities across both IT and non-IT sectors.
 
 From intelligent resume screening to real-time skill-gap mapping and predictive career modeling, modern talent ecosystems have shifted decisively beyond simple keyword filters toward deep semantic intelligence.
 
@@ -70,18 +68,19 @@ Algorithms cannot assess nuanced qualities like grit, cultural alignment, leader
 ## Looking Forward
 
 As artificial intelligence continues to evolve, career platforms will become even more personalized, predictive, and transparent. The professionals and organizations that integrate these intelligent tools into their daily workflows will hold a clear competitive advantage in tomorrow's talent market.`,
-    category: 'AI in Careers',
-    date: '2026-08-01',
-    author: 'Triopath Team',
-    // image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    image: blog1.src,
-    readTime: '7 min read',
-  },
-  {
-    slug: 'complete-resume-optimization-guide',
-    title: 'Complete Resume Optimization Guide for Today’s Job Market',
-    description: 'Everything you need to know about creating an ATS-friendly resume that gets noticed by recruiters.',
-    content: `Your resume is often the only filter standing between you and your next career breakthrough. With most applications filtered by modern Applicant Tracking Systems and automated screening algorithms before reaching human eyes, strategic optimization is essential across all technical and non-technical fields.
+		category: 'AI in Careers',
+		date: '2026-08-01',
+		author: 'Triopath Team',
+		// image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200',
+		image: blog1.src,
+		readTime: '7 min read',
+	},
+	{
+		slug: 'complete-resume-optimization-guide',
+		title: 'Complete Resume Optimization Guide for Today’s Job Market',
+		description:
+			'Everything you need to know about creating an ATS-friendly resume that gets noticed by recruiters.',
+		content: `Your resume is often the only filter standing between you and your next career breakthrough. With most applications filtered by modern Applicant Tracking Systems and automated screening algorithms before reaching human eyes, strategic optimization is essential across all technical and non-technical fields.
 
 Passing these systems requires more than simple keyword stuffing. You need a structured combination of clean typography, semantic skill alignment, and measurable business impact.
 
@@ -130,17 +129,18 @@ Creating a standout resume should not involve guesswork. Through TRIOPATH Career
 ## Conclusion
 
 An optimized resume is not about gaming an algorithm — it is about presenting your genuine accomplishments with clarity, precision, and measurable proof. By pairing clean structure with outcome-driven bullet points, you turn your resume into a consistent interview generator.`,
-    category: 'Resume Optimization',
-    date: '2026-08-03',
-    author: 'TRIOPATH Team',
-    image: blog2.src,
-    readTime: '7 min read',
-  },
-  {
-    slug: 'mastering-job-interviews',
-    title: 'Mastering Job Interviews: The Complete Strategy Guide',
-    description: 'From preparation to follow-up, learn the strategies that make candidates stand out in any interview.',
-    content: `Job interviews can feel high-stakes and intimidating, but interview success is an engineered skill built on structured preparation, active communication, and clear value demonstration.
+		category: 'Resume Optimization',
+		date: '2026-08-03',
+		author: 'TRIOPATH Team',
+		image: blog2.src,
+		readTime: '7 min read',
+	},
+	{
+		slug: 'mastering-job-interviews',
+		title: 'Mastering Job Interviews: The Complete Strategy Guide',
+		description:
+			'From preparation to follow-up, learn the strategies that make candidates stand out in any interview.',
+		content: `Job interviews can feel high-stakes and intimidating, but interview success is an engineered skill built on structured preparation, active communication, and clear value demonstration.
 
 Whether you are stepping into a screening call, a technical evaluation, or an executive leadership panel, how you articulate your problem-solving process determines your outcome.
 
@@ -194,17 +194,18 @@ Reading interview guides builds knowledge, but practicing under pressure builds 
 * 1-on-1 mock interview sessions with seasoned hiring managers and technical leads.
 * Detailed evaluation scorecards covering communication clarity, technical depth, and body language.
 * Curated, role-specific question banks tailored to current hiring standards.`,
-    category: 'Interview Preparation',
-    date: '2026-08-05',
-    author: 'TRIOPATH Team',
-    image: blog3.src,
-    readTime: '6 min read',
-  },
-  {
-    slug: 'job-search-strategies-that-work',
-    title: 'High-Impact Job Search Strategies That Actually Work',
-    description: 'Move beyond job boards with these proven strategies for finding and landing your dream role.',
-    content: `The modern job search has evolved. While most candidates rely on mass-applying to public job boards with generic resumes, high-performing professionals treat their job hunt like a targeted campaign.
+		category: 'Interview Preparation',
+		date: '2026-08-05',
+		author: 'TRIOPATH Team',
+		image: blog3.src,
+		readTime: '6 min read',
+	},
+	{
+		slug: 'job-search-strategies-that-work',
+		title: 'High-Impact Job Search Strategies That Actually Work',
+		description:
+			'Move beyond job boards with these proven strategies for finding and landing your dream role.',
+		content: `The modern job search has evolved. While most candidates rely on mass-applying to public job boards with generic resumes, high-performing professionals treat their job hunt like a targeted campaign.
 
 Breaking through the noise requires proactive networking, verifiable proof of work, and strategic positioning across both technical and business roles.
 
@@ -258,17 +259,18 @@ A successful job search requires patience, continuous iteration, and consistency
 * Treat your job search like a daily work routine with dedicated hours for upskilling, networking, and applications.
 * Refine your resume and portfolio based on interview feedback and callback rates.
 * Stay focused on long-term career growth rather than short-term rejections.`,
-    category: 'Job Searching',
-    date: '2026-08-07',
-    author: 'TRIOPATH Team',
-    image: blog4.src,
-    readTime: '8 min read',
-  },
-  {
-    slug: 'skills-that-matter-most',
-    title: 'Top Skills That Define High-Growth Careers',
-    description: 'From AI literacy to emotional intelligence, discover the skills employers prioritize most in the modern market.',
-    content: `The skills that employers value are shifting rapidly across global markets. As automation, cloud architecture, and artificial intelligence reshape everyday workflows, staying competitive means understanding which competencies offer the highest long-term leverage.
+		category: 'Job Searching',
+		date: '2026-08-07',
+		author: 'TRIOPATH Team',
+		image: blog4.src,
+		readTime: '8 min read',
+	},
+	{
+		slug: 'skills-that-matter-most',
+		title: 'Top Skills That Define High-Growth Careers',
+		description:
+			'From AI literacy to emotional intelligence, discover the skills employers prioritize most in the modern market.',
+		content: `The skills that employers value are shifting rapidly across global markets. As automation, cloud architecture, and artificial intelligence reshape everyday workflows, staying competitive means understanding which competencies offer the highest long-term leverage.
 
 Technical expertise unlocks initial opportunities, but the combination of modern hard skills and human emotional intelligence is what accelerates long-term career growth across both technical and business roles.
 
@@ -301,17 +303,18 @@ Building career-ready competencies requires structured, intentional execution ra
 ## Conclusion
 
 Future-proofing your career is not about chasing every fleeting trend; it is about building a versatile foundation of technical depth paired with sharp communication and problem-solving skills. By taking a deliberate, project-driven approach to your daily development, you ensure your skill set remains relevant and competitive.`,
-    category: 'Skills',
-    date: '2026-08-09',
-    author: 'TRIOPATH Team',
-image: blog5.src,
-    readTime: '6 min read',
-  },
-  {
-    slug: 'recruitment-trends-shaping-the-industry',
-    title: 'Recruitment Trends Shaping the Industry',
-    description: 'How modern talent acquisition is evolving and what it means for forward-thinking employers and ambitious job seekers.',
-    content: `Recruitment is undergoing a fundamental transformation driven by generative intelligence, automated screening workflows, evolving workplace expectations, and fluid global market dynamics.
+		category: 'Skills',
+		date: '2026-08-09',
+		author: 'TRIOPATH Team',
+		image: blog5.src,
+		readTime: '6 min read',
+	},
+	{
+		slug: 'recruitment-trends-shaping-the-industry',
+		title: 'Recruitment Trends Shaping the Industry',
+		description:
+			'How modern talent acquisition is evolving and what it means for forward-thinking employers and ambitious job seekers.',
+		content: `Recruitment is undergoing a fundamental transformation driven by generative intelligence, automated screening workflows, evolving workplace expectations, and fluid global market dynamics.
 
 Hiring teams no longer rely on manual resume stacks or rigid tenure filters. Instead, modern talent acquisition focuses on verifiable competency, rapid interview turnaround, and data-backed candidate matching.
 
@@ -358,17 +361,18 @@ Navigating these shifts requires a recruitment partner that combines rapid sourc
 * TRIOPATH Careers delivers verified, job-ready candidates across IT and non-IT sectors, reducing recruiter screening fatigue.
 * Our matching ecosystem evaluates technical competence, communication style, and cultural alignment to drive high long-term retention.
 * From initial sourcing to interview coordination and offer negotiation, we streamline the entire hiring journey.`,
-    category: 'Recruitment',
-    date: '2026-08-11',
-    author: 'TRIOPATH Team',
-image: blog6.src,
-    readTime: '7 min read',
-  },
-  {
-    slug: 'career-path-planning-guide',
-    title: 'How to Plan a Career Path That Actually Works',
-    description: 'A practical framework for mapping your career trajectory with intention, measurable milestones, and market resilience.',
-    content: `Effective career planning is not about locking yourself into a rigid multi-year schedule that becomes obsolete when technology changes. It is about establishing a clear direction while building adaptable skills that thrive through market shifts.
+		category: 'Recruitment',
+		date: '2026-08-11',
+		author: 'TRIOPATH Team',
+		image: blog6.src,
+		readTime: '7 min read',
+	},
+	{
+		slug: 'career-path-planning-guide',
+		title: 'How to Plan a Career Path That Actually Works',
+		description:
+			'A practical framework for mapping your career trajectory with intention, measurable milestones, and market resilience.',
+		content: `Effective career planning is not about locking yourself into a rigid multi-year schedule that becomes obsolete when technology changes. It is about establishing a clear direction while building adaptable skills that thrive through market shifts.
 
 Professionals who experience steady career growth treat their careers like an evolving product, making continuous, data-driven iterations toward a focused long-term goal.
 
@@ -415,17 +419,18 @@ Navigating professional growth is significantly faster with experienced mentorsh
 * Work 1-on-1 with industry advisors to evaluate your trajectory, identify career blind spots, and clarify your growth roadmap.
 * Receive structured development plans built around your specific strengths and target career tracks across technical and non-technical domains.
 * Connect directly with vetted hiring partners looking for your exact capabilities.`,
-    category: 'Career Paths',
-    date: '2026-08-12',
-    author: 'TRIOPATH Team',
-image: blog7.src,
-    readTime: '6 min read',
-  },
-  {
-    slug: 'navigating-the-job-market',
-    title: 'Navigating the Modern Job Market: Insights and Strategies',
-    description: 'Understanding current hiring dynamics, beating automated screening, and positioning yourself for high-growth roles.',
-    content: `The modern job market is characterized by high demand for specialized skills, automated candidate discovery, and strong competition for quality positions.
+		category: 'Career Paths',
+		date: '2026-08-12',
+		author: 'TRIOPATH Team',
+		image: blog7.src,
+		readTime: '6 min read',
+	},
+	{
+		slug: 'navigating-the-job-market',
+		title: 'Navigating the Modern Job Market: Insights and Strategies',
+		description:
+			'Understanding current hiring dynamics, beating automated screening, and positioning yourself for high-growth roles.',
+		content: `The modern job market is characterized by high demand for specialized skills, automated candidate discovery, and strong competition for quality positions.
 
 Navigating this ecosystem requires moving away from high-volume, generic applications toward targeted positioning, proven output, and deliberate outreach.
 
@@ -466,18 +471,19 @@ At TRIOPATH Careers, we streamline the path from job hunting to hired profession
 * Match directly with open positions across IT and non-IT sectors that align with your verified skills and compensation goals.
 * Use our specialized tools to ensure your resume passes automated filters and catches recruiter attention.
 * Refine your communication, technical depth, and confidence under the guidance of seasoned hiring professionals through mock interview sessions.`,
-    category: 'Job Market',
-    date: '2026-08-13',
-    author: 'TRIOPATH Team',
-    image: blog8.src,
+		category: 'Job Market',
+		date: '2026-08-13',
+		author: 'TRIOPATH Team',
+		image: blog8.src,
 
-    readTime: '7 min read',
-  },
-  {
-    slug: 'professional-growth-habits',
-    title: 'High-Impact Habits of Professionals Who Grow Exponentially',
-    description: 'The daily routines, feedback systems, and strategic mindsets that separate stagnant careers from rapid professional advancement.',
-    content: `Long-term career success is rarely the product of overnight breakthroughs or isolated moments of good fortune. It is built on compounding daily habits, deliberate learning routines, and consistent execution over time.
+		readTime: '7 min read',
+	},
+	{
+		slug: 'professional-growth-habits',
+		title: 'High-Impact Habits of Professionals Who Grow Exponentially',
+		description:
+			'The daily routines, feedback systems, and strategic mindsets that separate stagnant careers from rapid professional advancement.',
+		content: `Long-term career success is rarely the product of overnight breakthroughs or isolated moments of good fortune. It is built on compounding daily habits, deliberate learning routines, and consistent execution over time.
 
 Professionals who advance quickly into high-impact roles operate with structured systems that continuously improve their technical depth, professional relationships, and output quality.
 
@@ -531,17 +537,18 @@ Building career-defining habits is faster with the right community and professio
 * Identify high-leverage growth areas with guided competency evaluations.
 * Practice communication and behavioral answers with experienced mentors.
 * Connect with partner companies that reward proactive, high-performing talent.`,
-    category: 'Professional Growth',
-    date: '2026-08-14',
-    author: 'TRIOPATH Team',
-image: blog9.src,
-    readTime: '6 min read',
-  },
-  {
-    slug: 'remote-work-career-success',
-    title: 'Building a Successful Career in a Remote-First World',
-    description: 'Proven strategies for standing out, maintaining visibility, and driving career advancement across distributed teams.',
-    content: `Remote and hybrid work models are permanent fixtures of the modern global economy.
+		category: 'Professional Growth',
+		date: '2026-08-14',
+		author: 'TRIOPATH Team',
+		image: blog9.src,
+		readTime: '6 min read',
+	},
+	{
+		slug: 'remote-work-career-success',
+		title: 'Building a Successful Career in a Remote-First World',
+		description:
+			'Proven strategies for standing out, maintaining visibility, and driving career advancement across distributed teams.',
+		content: `Remote and hybrid work models are permanent fixtures of the modern global economy.
 
 While distributed setups offer flexibility and eliminate daily commutes, they also introduce unique challenges: asynchronous collaboration gaps, digital fatigue, and reduced natural visibility with leadership teams.
 
@@ -588,11 +595,11 @@ At TRIOPATH Careers, we prepare talent to excel in modern distributed workplaces
 * Connect with leading companies hiring for high-autonomy, distributed roles across IT and non-IT disciplines.
 * Master virtual interview delivery, communication standards, and asynchronous technical evaluations.
 * Gain actionable guidance from mentors experienced in leading high-performing distributed teams.`,
-    category: 'Career Paths',
-    date: '2026-08-15',
-    author: 'TRIOPATH Team',
-    // image: 'https://images.pexels.com/photos/4013624/pexels-photo-4013624.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      image: blog10.src,
-    readTime: '6 min read',
-  },
+		category: 'Career Paths',
+		date: '2026-08-15',
+		author: 'TRIOPATH Team',
+		// image: 'https://images.pexels.com/photos/4013624/pexels-photo-4013624.jpeg?auto=compress&cs=tinysrgb&w=1200',
+		image: blog10.src,
+		readTime: '6 min read',
+	},
 ];

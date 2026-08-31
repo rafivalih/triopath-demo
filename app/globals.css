@@ -154,6 +154,16 @@
     background-repeat: no-repeat;
   }
 
+  .contactus {
+    background-image: linear-gradient(90deg, rgba(247, 249, 252, 0.98) 0%, rgba(247, 249, 252, 0.88) 42%, rgba(247, 249, 252, 0.5) 100%),
+
+      url('https://thumbs.dreamstime.com/b/contact-us-sticker-sign-transparent-background-rectangular-button-325779454.jpg');
+    min-height: 450px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
 
   .glass {
     background: rgba(255, 255, 255, 0.7);
@@ -259,18 +269,10 @@
 
 
 
-
-
 @media print {
   @page {
     size: A4 portrait;
-      margin: 10mm 12mm 5mm 12mm;
-    /* margin: 0;
-    padding-top: 10mm;
-    padding-bottom: 0mm;
-    padding-right: 12mm;
-    padding-left: 12mm; */
-
+    margin: 10mm 12mm 5mm 12mm;
   }
 
   html,
@@ -281,6 +283,8 @@
     height: auto !important;
     background: #ffffff !important;
     overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   /* Hide everything */
@@ -288,10 +292,13 @@
     visibility: hidden !important;
   }
 
-  /* Show resume only */
+  /* Show resume only with preserved colors and backgrounds */
   #resume-print-area,
   #resume-print-area * {
     visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
   /* Remove screen layout */
@@ -300,15 +307,11 @@
     top: 0 !important;
     left: 0 !important;
 
-    /* width: 210mm !important;
-    min-width: 210mm !important;
-    max-width: 210mm !important; */
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
 
     height: auto !important;
-    /* min-height: 297mm !important; */
     min-height: 0 !important;
 
     margin: 0 !important;
@@ -332,6 +335,16 @@
     overflow: visible !important;
   }
 
+  /* Ensure background colors on sidebars, headers, and icon circles are rendered */
+  aside,
+  header,
+  div,
+  span,
+  svg {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   /* Resume content can naturally continue to page 2 */
   section {
     break-inside: auto !important;
@@ -347,5 +360,99 @@
   /* Keep links as normal text */
   a {
     text-decoration: none !important;
+  }
+}
+
+
+
+@keyframes results-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-results-marquee {
+  animation: results-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+
+
+
+
+
+.send-button {
+  position: relative;
+  overflow: hidden;
+  height: 44px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 12px;
+  background: #0f172a;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.send-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.send-arrow {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
+
+.send-button:hover .send-text {
+  transform: translateX(45px);
+  opacity: 0;
+}
+
+.send-button:hover .send-arrow {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: jello-vertical 0.9s both;
+  transform-origin: right;
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) scale3d(0.75, 1.25, 1);
+  }
+
+  40% {
+    transform: translate(-50%, -50%) scale3d(1.25, 0.75, 1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale3d(0.85, 1.15, 1);
+  }
+
+  65% {
+    transform: translate(-50%, -50%) scale3d(1.05, 0.95, 1);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) scale3d(0.95, 1.05, 1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
   }
 }

@@ -1,12 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import img1 from "../../app/images/img1.png";
-import img2 from "../../app/images/img2.png";
-import img3 from "../../app/images/img3.png";
-import img4 from "../../app/images/img4.png";
-import img5 from "../../app/images/img5.png";
-import img6 from "../../app/images/img6.png";
-import img7 from "../../app/images/img7.png";
+import img1 from '../../app/images/img1.png';
+import img2 from '../../app/images/img2.png';
+import img3 from '../../app/images/img3.png';
+import img4 from '../../app/images/img4.png';
+import img5 from '../../app/images/img5.png';
+import img6 from '../../app/images/img6.png';
+import img7 from '../../app/images/img7.png';
 
 const images = [img1, img2, img3, img4, img5, img6, img7];
 
@@ -21,8 +21,8 @@ export default function StudioGallery() {
 					</h2>
 
 					<p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#77736e] sm:text-lg">
-						Sketches, sticky notes and the occasional bad first draft — the
-						parts that don't make it into the case studies.
+						Sketches, sticky notes and the occasional bad first draft — the parts that don't make it
+						into the case studies.
 					</p>
 				</div>
 
@@ -52,7 +52,7 @@ export default function StudioGallery() {
 
 					{/* Image 3 */}
 					<div className="relative col-span-2 h-[120px] overflow-hidden rounded-xl border border-black/20 sm:col-span-1 sm:h-[300px] lg:col-span-2 lg:h-[340px]">
-						{" "}
+						{' '}
 						<Image
 							src={images[2]}
 							alt="Team meeting"
@@ -97,7 +97,7 @@ export default function StudioGallery() {
 
 					{/* Image 7 */}
 					<div className="relative col-span-1 h-[200px] overflow-hidden rounded-xl border border-black/20 sm:col-span-1 sm:h-[350px] lg:col-span-2 lg:h-[430px]">
-						{" "}
+						{' '}
 						<Image
 							src={images[6]}
 							alt="Studio workspace"

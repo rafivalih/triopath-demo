@@ -1,427 +1,606 @@
 'use client';
 
-import React from 'react';
-import { ResumeData } from '@/types/resume';
+import {
+	Award,
+	BookOpen,
+	Briefcase,
+	Code2,
+	ExternalLink,
+	FolderGit2,
+	Github,
+	Globe,
+	GraduationCap,
+	Heart,
+	Languages,
+	Linkedin,
+	Mail,
+	MapPin,
+	Phone,
+	Trophy,
+	User,
+} from 'lucide-react';
+import type React from 'react';
+import type { ResumeData } from '@/types/resume';
 
 interface BackendDeveloperProps {
-  data: ResumeData;
+	data: ResumeData;
 }
 
 export const BackendDeveloper: React.FC<BackendDeveloperProps> = ({ data }) => {
-  const {
-    personal = {
-      fullName: '',
-      jobTitle: '',
-      email: '',
-      phone: '',
-      location: '',
-      website: '',
-      linkedin: '',
-      github: '',
-      summary: '',
-    },
-    experience = [],
-    education = [],
-    skills = [],
-    projects = [],
-    certificates = [],
-  } = data || {};
+	const {
+		personal = {
+			fullName: '',
+			jobTitle: '',
+			email: '',
+			phone: '',
+			location: '',
+			website: '',
+			linkedin: '',
+			github: '',
+			summary: '',
+		},
+		experience = [],
+		education = [],
+		skills = [],
+		projects = [],
+		certificates = [],
+		languages = [],
+		interests = [],
+		achievements = [],
+		courses = [],
+	} = (data as any) || {};
 
-  return (
-    <div
-      className="w-full bg-white text-slate-900 leading-tight box-border px-[10mm] py-[10mm] print:p-0 print:m-0 font-sans text-[9pt]"
-      style={{
-        fontFamily: "'Inter', 'Plus Jakarta Sans', system-ui, sans-serif",
-        wordBreak: 'break-word',
-        overflowWrap: 'break-word',
-      }}
-    >
-      {/* Outer Border Box */}
-      <div className="border-2 border-slate-900 grid grid-cols-12 min-h-full">
-        {/* ================= LEFT COLUMN (~35% / Col 4) ================= */}
-        <aside className="col-span-4 border-r-2 border-slate-900 p-3.5 flex flex-col justify-between bg-white">
-          <div>
-            {/* Top: BACKEND DEVELOPER Label & Contact */}
-            <div className="mb-4">
-              <div className="font-mono font-black text-[10pt] uppercase tracking-wider text-slate-950 leading-tight mb-3">
-                BACKEND
-                <br />
-                DEVELOPER
-              </div>
+	const forceColorStyle = {
+		WebkitPrintColorAdjust: 'exact',
+		printColorAdjust: 'exact',
+	} as React.CSSProperties;
 
-              <div className="mb-2">
-                <h3 className="font-mono font-bold uppercase tracking-wider text-[8.5pt] text-slate-900 mb-1.5">
-                  CONTACT
-                </h3>
-                <div className="space-y-1 text-[8.5pt] text-slate-800">
-                  {personal.email && (
-                    <div>
-                      <span className="font-semibold block text-slate-500 text-[7.5pt] uppercase">
-                        Email
-                      </span>
-                      <a
-                        href={`mailto:${personal.email}`}
-                        className="hover:underline text-slate-900 truncate block font-medium"
-                      >
-                        {personal.email}
-                      </a>
-                    </div>
-                  )}
+	return (
+		<div
+			className="w-full bg-white text-slate-900 leading-normal box-border print:p-0 print:m-0 font-sans text-[8.8pt]"
+			style={{
+				fontFamily: "'Inter', 'Plus Jakarta Sans', system-ui, sans-serif",
+				wordBreak: 'break-word',
+				overflowWrap: 'break-word',
+				...forceColorStyle,
+			}}
+		>
+			<div className="grid grid-cols-12 min-h-full">
+				{/* ========================================================= */}
+				{/* ================= LEFT SIDEBAR (Col 4) ================= */}
+				{/* ========================================================= */}
+				<aside
+					className="col-span-4 bg-[#081432] text-white flex flex-col justify-start"
+					style={{ backgroundColor: '#081432', color: '#ffffff', ...forceColorStyle }}
+				>
+					{/* Top Navy Header Banner */}
+					<div className="px-5 pt-6 pb-4 border-b border-slate-700/60">
+						<h2 className="text-[16pt] font-black uppercase tracking-wider leading-tight text-white font-sans">
+							{personal.jobTitle || 'BACKEND DEVELOPER'}
 
-                  {personal.phone && (
-                    <div>
-                      <span className="font-semibold block text-slate-500 text-[7.5pt] uppercase">
-                        Phone
-                      </span>
-                      <span className="font-medium">{personal.phone}</span>
-                    </div>
-                  )}
+							<br />
+						</h2>
+						<div className="flex items-center gap-1.5 mt-2">
+							<div className="w-8 h-0.5 bg-[#5B93E8]"></div>
+							<div className="w-1.5 h-1.5 rounded-full bg-[#5B93E8]"></div>
+						</div>
+					</div>
 
-                  {personal.location && (
-                    <div>
-                      <span className="font-semibold block text-slate-500 text-[7.5pt] uppercase">
-                        Location
-                      </span>
-                      <span className="font-medium">{personal.location}</span>
-                    </div>
-                  )}
+					<div className="p-4 space-y-5 flex-1">
+						{/* 1. CONTACT */}
+						{(personal.email ||
+							personal.phone ||
+							personal.location ||
+							personal.linkedin ||
+							personal.github ||
+							personal.website) && (
+							<section className="break-inside-avoid">
+								<div className="flex items-center gap-2 mb-2.5">
+									<div
+										className="bg-[#102454] text-white p-1 rounded-full shrink-0 flex items-center justify-center border border-slate-700/50"
+										style={{ backgroundColor: '#102454', ...forceColorStyle }}
+									>
+										<User className="w-3.5 h-3.5 text-white" />
+									</div>
+									<h3 className="text-[9pt] font-black uppercase tracking-wider text-white">
+										CONTACT
+									</h3>
+								</div>
 
-                  {personal.linkedin && (
-                    <div>
-                      <span className="font-semibold block text-slate-500 text-[7.5pt] uppercase">
-                        LinkedIn
-                      </span>
-                      <a
-                        href={
-                          personal.linkedin.startsWith('http')
-                            ? personal.linkedin
-                            : `https://${personal.linkedin}`
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:underline text-slate-900 block font-medium"
-                      >
-                        {personal.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\/?/, '') ||
-                          'Profile'}
-                      </a>
-                    </div>
-                  )}
+								<div className="space-y-1.5 text-[8pt] text-slate-200 pl-1">
+									{personal.email && (
+										<div className="flex items-center gap-2">
+											<Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+											<a
+												href={`mailto:${personal.email}`}
+												className="hover:underline text-slate-200 truncate block"
+											>
+												{personal.email}
+											</a>
+										</div>
+									)}
 
-                  {personal.github && (
-                    <div>
-                      <span className="font-semibold block text-slate-500 text-[7.5pt] uppercase">
-                        GitHub
-                      </span>
-                      <a
-                        href={
-                          personal.github.startsWith('http')
-                            ? personal.github
-                            : `https://${personal.github}`
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:underline text-slate-900 block font-medium"
-                      >
-                        {personal.github.replace(/^https?:\/\/(www\.)?github\.com\/?/, '') ||
-                          'Profile'}
-                      </a>
-                    </div>
-                  )}
+									{personal.phone && (
+										<div className="flex items-center gap-2">
+											<Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+											<span>{personal.phone}</span>
+										</div>
+									)}
 
-                  {personal.website && (
-                    <div>
-                      <span className="font-semibold block text-slate-500 text-[7.5pt] uppercase">
-                        Portfolio
-                      </span>
-                      <a
-                        href={
-                          personal.website.startsWith('http')
-                            ? personal.website
-                            : `https://${personal.website}`
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:underline text-slate-900 block font-medium"
-                      >
-                        {personal.website.replace(/^https?:\/\/(www\.)?/, '') || 'Portfolio'}
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
+									{personal.location && (
+										<div className="flex items-center gap-2">
+											<MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+											<span>{personal.location}</span>
+										</div>
+									)}
 
-            {/* Divider Line */}
-            <div className="w-full border-t border-slate-900 my-3" />
+									{personal.linkedin && (
+										<div className="flex items-center gap-2">
+											<Linkedin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+											<a
+												href={
+													personal.linkedin.startsWith('http')
+														? personal.linkedin
+														: `https://${personal.linkedin}`
+												}
+												target="_blank"
+												rel="noreferrer"
+												className="hover:underline text-slate-200 truncate block"
+											>
+												{personal.linkedin.replace(
+													/^https?:\/\/(www\.)?linkedin\.com\/in\/?/,
+													'',
+												) || 'LinkedIn'}
+											</a>
+										</div>
+									)}
 
-            {/* Backend Skills */}
-            {skills.length > 0 && (
-              <div className="mb-4">
-                <h3 className="font-mono font-bold uppercase tracking-wider text-[8.5pt] text-slate-900 mb-2">
-                  BACKEND SKILLS
-                </h3>
-                <div className="space-y-2 text-[8.5pt]">
-                  {skills.map((item: any, idx: number) => {
-                    if (typeof item === 'object' && item !== null) {
-                      const categoryTitle = item.category || 'Skills';
-                      const skillsList = Array.isArray(item.skills)
-                        ? item.skills.filter(Boolean)
-                        : typeof item.skills === 'string'
-                        ? item.skills.split(',').map((s: string) => s.trim())
-                        : [];
+									{personal.github && (
+										<div className="flex items-center gap-2">
+											<Github className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+											<a
+												href={
+													personal.github.startsWith('http')
+														? personal.github
+														: `https://${personal.github}`
+												}
+												target="_blank"
+												rel="noreferrer"
+												className="hover:underline text-slate-200 truncate block"
+											>
+												{personal.github.replace(/^https?:\/\/(www\.)?github\.com\/?/, '') ||
+													'GitHub'}
+											</a>
+										</div>
+									)}
 
-                      if (skillsList.length === 0) return null;
+									{personal.website && (
+										<div className="flex items-center gap-2">
+											<Globe className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+											<a
+												href={
+													personal.website.startsWith('http')
+														? personal.website
+														: `https://${personal.website}`
+												}
+												target="_blank"
+												rel="noreferrer"
+												className="hover:underline text-slate-200 truncate block"
+											>
+												{personal.website.replace(/^https?:\/\/(www\.)?/, '') || 'Portfolio'}
+											</a>
+										</div>
+									)}
+								</div>
+							</section>
+						)}
 
-                      return (
-                        <div key={item.id || idx}>
-                          <p className="font-semibold text-slate-600 text-[7.5pt] uppercase">
-                            {categoryTitle}
-                          </p>
-                          <p className="font-medium text-slate-950 leading-snug">
-                            {skillsList.join(', ')}
-                          </p>
-                        </div>
-                      );
-                    }
+						{/* 2. TECHNICAL SKILLS */}
+						{skills.length > 0 && (
+							<section className="break-inside-avoid">
+								<div className="flex items-center gap-2 mb-2.5">
+									<div
+										className="bg-[#102454] text-white p-1 rounded-full shrink-0 flex items-center justify-center border border-slate-700/50"
+										style={{ backgroundColor: '#102454', ...forceColorStyle }}
+									>
+										<Code2 className="w-3.5 h-3.5 text-white" />
+									</div>
+									<h3 className="text-[9pt] font-black uppercase tracking-wider text-white">
+										TECHNICAL SKILLS
+									</h3>
+								</div>
 
-                    if (typeof item === 'string') {
-                      const hasColon = item.includes(':');
-                      if (hasColon) {
-                        const [category, skillsList] = item.split(/:(.+)/);
-                        return (
-                          <div key={idx}>
-                            <p className="font-semibold text-slate-600 text-[7.5pt] uppercase">
-                              {category.trim()}
-                            </p>
-                            <p className="font-medium text-slate-950 leading-snug">
-                              {skillsList?.trim()}
-                            </p>
-                          </div>
-                        );
-                      }
+								<div className="space-y-3 text-[8pt] pl-1">
+									{skills.map((item: any, idx: number) => {
+										if (typeof item === 'object' && item !== null) {
+											const categoryTitle = item.category || 'Skills';
+											const skillsList = Array.isArray(item.skills)
+												? item.skills.filter(Boolean)
+												: typeof item.skills === 'string'
+													? item.skills.split(',').map((s: string) => s.trim())
+													: [];
 
-                      return (
-                        <p key={idx} className="font-medium text-slate-950">
-                          {item}
-                        </p>
-                      );
-                    }
+											if (skillsList.length === 0) return null;
 
-                    return null;
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
+											return (
+												<div key={item.id || idx} className="break-inside-avoid">
+													<p className="font-bold text-[#5B93E8] text-[7.5pt] uppercase tracking-wider mb-1">
+														{categoryTitle}
+													</p>
+													<ul className="space-y-0.5 text-slate-200 font-normal pl-2">
+														{skillsList.map((skill: string, sIdx: number) => (
+															<li key={sIdx} className="flex items-center gap-1.5">
+																<span className="text-slate-400 font-bold">•</span>
+																<span>{skill}</span>
+															</li>
+														))}
+													</ul>
+												</div>
+											);
+										}
 
-          <div>
-            {/* Divider Line */}
-            <div className="w-full border-t border-slate-900 my-3" />
+										if (typeof item === 'string') {
+											const hasColon = item.includes(':');
+											if (hasColon) {
+												const [category, skillsList] = item.split(/:(.+)/);
+												const list = skillsList
+													?.split(',')
+													.map((s) => s.trim())
+													.filter(Boolean);
+												return (
+													<div key={idx} className="break-inside-avoid">
+														<p className="font-bold text-[#5B93E8] text-[7.5pt] uppercase tracking-wider mb-1">
+															{category.trim()}
+														</p>
+														<ul className="space-y-0.5 text-slate-200 font-normal pl-2">
+															{list?.map((skill, sIdx) => (
+																<li key={sIdx} className="flex items-center gap-1.5">
+																	<span className="text-slate-400 font-bold">•</span>
+																	<span>{skill}</span>
+																</li>
+															))}
+														</ul>
+													</div>
+												);
+											}
 
-            {/* Education Quick View */}
-            {education.length > 0 && (
-              <div className="mb-3">
-                <h3 className="font-mono font-bold uppercase tracking-wider text-[8.5pt] text-slate-900 mb-1.5">
-                  EDUCATION
-                </h3>
-                <div className="space-y-1.5 text-[8.5pt]">
-                  {education.map((edu, idx) => (
-                    <div key={edu.id || idx}>
-                      <p className="font-bold text-slate-950 leading-tight">
-                        {edu.degree || edu.fieldOfStudy || 'Degree'}
-                      </p>
-                      <p className="text-slate-600 text-[8pt]">{edu.institution}</p>
-                      {(edu.startDate || edu.endDate) && (
-                        <p className="text-slate-500 text-[7.5pt]">
-                          {edu.startDate ? `${edu.startDate} – ` : ''}
-                          {edu.endDate}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+											return (
+												<p key={idx} className="text-slate-200 pl-2">
+													• {item}
+												</p>
+											);
+										}
 
-            {/* Certifications Quick View */}
-            {certificates && certificates.length > 0 && (
-              <div>
-                <h3 className="font-mono font-bold uppercase tracking-wider text-[8.5pt] text-slate-900 mb-1.5">
-                  CERTIFICATIONS
-                </h3>
-                <div className="space-y-1 text-[8pt]">
-                  {certificates.map((cert, idx) => (
-                    <div key={cert.id || idx}>
-                      <p className="font-semibold text-slate-900 leading-tight">{cert.name}</p>
-                      {cert.issuer && <p className="text-slate-500 text-[7.5pt]">{cert.issuer}</p>}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </aside>
+										return null;
+									})}
+								</div>
+							</section>
+						)}
 
-        {/* ================= RIGHT COLUMN (~65% / Col 8) ================= */}
-        <main className="col-span-8 flex flex-col justify-between bg-white">
-          {/* SECTION 1: Header & Summary */}
-          <div className="p-4 border-b-2 border-slate-900">
-            <h1 className="text-[20pt] font-black uppercase tracking-tight text-slate-950 leading-none mb-1">
-              {personal.fullName || 'FULL NAME'}
-            </h1>
-            <p className="text-[10pt] font-bold uppercase tracking-wider text-slate-700 font-mono mb-2.5">
-              {personal.jobTitle || 'Backend Developer'}
-            </p>
+						{/* 3. EDUCATION (Sidebar Glance) */}
+						{education.length > 0 && (
+							<section className="break-inside-avoid">
+								<div className="flex items-center gap-2 mb-2.5">
+									<div
+										className="bg-[#102454] text-white p-1 rounded-full shrink-0 flex items-center justify-center border border-slate-700/50"
+										style={{ backgroundColor: '#102454', ...forceColorStyle }}
+									>
+										<GraduationCap className="w-3.5 h-3.5 text-white" />
+									</div>
+									<h3 className="text-[9pt] font-black uppercase tracking-wider text-white">
+										EDUCATION
+									</h3>
+								</div>
 
-            <div>
-              <h2 className="font-mono font-bold uppercase tracking-wider text-[8.5pt] text-slate-900 mb-1">
-                PROFESSIONAL SUMMARY
-              </h2>
-              <p className="text-[8.5pt] leading-relaxed text-slate-700 text-justify">
-                {personal.summary ||
-                  'Dedicated Backend Developer with expertise in designing high-throughput RESTful APIs, microservices architecture, relational/NoSQL database management, and scalable cloud deployments.'}
-              </p>
-            </div>
-          </div>
+								<div className="space-y-2.5 text-[8pt] pl-1">
+									{education.map((edu: any, idx: number) => (
+										<div key={edu.id || idx} className="break-inside-avoid">
+											<p className="font-bold text-white leading-snug">
+												{edu.degree || edu.fieldOfStudy || 'Degree'}
+											</p>
+											<p className="text-slate-300">{edu.institution}</p>
+											{edu.location && <p className="text-slate-400">{edu.location}</p>}
+											{(edu.startDate || edu.endDate) && (
+												<p className="text-[#5B93E8] font-semibold text-[7.5pt] mt-0.5">
+													{edu.startDate ? `${edu.startDate} – ` : ''}
+													{edu.endDate}
+												</p>
+											)}
+										</div>
+									))}
+								</div>
+							</section>
+						)}
 
-          {/* SECTION 2: Technical Experience */}
-          <div className="p-4 border-b-2 border-slate-900 flex-1">
-            <h2 className="font-mono font-bold uppercase tracking-wider text-[9pt] text-slate-900 mb-2.5">
-              TECHNICAL EXPERIENCE
-            </h2>
+						{/* 4. CERTIFICATIONS (Sidebar) */}
+						{certificates && certificates.length > 0 && (
+							<section className="break-inside-avoid">
+								<div className="flex items-center gap-2 mb-2.5">
+									<div
+										className="bg-[#102454] text-white p-1 rounded-full shrink-0 flex items-center justify-center border border-slate-700/50"
+										style={{ backgroundColor: '#102454', ...forceColorStyle }}
+									>
+										<Award className="w-3.5 h-3.5 text-white" />
+									</div>
+									<h3 className="text-[9pt] font-black uppercase tracking-wider text-white">
+										CERTIFICATIONS
+									</h3>
+								</div>
 
-            {experience.length > 0 ? (
-              <div className="space-y-3">
-                {experience.map((exp, idx) => (
-                  <div key={exp.id || idx} className="break-inside-avoid">
-                    <div className="flex items-baseline justify-between">
-                      <span className="font-bold text-slate-950 text-[9pt]">
-                        {exp.role}{' '}
-                        <span className="font-medium text-slate-700">— {exp.company}</span>
-                      </span>
-                      <span className="text-[8pt] font-mono text-slate-600 shrink-0 ml-2">
-                        {exp.startDate} – {exp.current ? 'Present' : exp.endDate}
-                      </span>
-                    </div>
+								<div className="space-y-2 text-[8pt] pl-1">
+									{certificates.map((cert: any, idx: number) => (
+										<div key={cert.id || idx} className="break-inside-avoid">
+											<div className="flex items-start gap-1">
+												<span className="text-[#5B93E8] font-bold">•</span>
+												<div>
+													<p className="font-bold text-white leading-tight">{cert.name}</p>
+													<p className="text-slate-400 text-[7.5pt]">
+														{cert.issuer} {cert.issueDate ? `| ${cert.issueDate}` : ''}
+													</p>
+												</div>
+											</div>
+										</div>
+									))}
+								</div>
+							</section>
+						)}
 
-                    {exp.location && (
-                      <div className="text-[8pt] text-slate-500 font-medium mb-1">
-                        {exp.location}
-                      </div>
-                    )}
+						{/* 5. LANGUAGES (Multi-page Section Support) */}
+						{languages && languages.length > 0 && (
+							<section className="break-inside-avoid">
+								<div className="flex items-center gap-2 mb-2.5">
+									<div
+										className="bg-[#102454] text-white p-1 rounded-full shrink-0 flex items-center justify-center border border-slate-700/50"
+										style={{ backgroundColor: '#102454', ...forceColorStyle }}
+									>
+										<Languages className="w-3.5 h-3.5 text-white" />
+									</div>
+									<h3 className="text-[9pt] font-black uppercase tracking-wider text-white">
+										LANGUAGES
+									</h3>
+								</div>
+								<ul className="space-y-1 text-[8pt] text-slate-200 pl-2">
+									{languages.map((lang: any, idx: number) => (
+										<li key={idx} className="flex items-center gap-1.5">
+											<span className="text-[#5B93E8] font-bold">•</span>
+											<span>
+												{typeof lang === 'string'
+													? lang
+													: `${lang.name} (${lang.level || 'Fluent'})`}
+											</span>
+										</li>
+									))}
+								</ul>
+							</section>
+						)}
+					</div>
+				</aside>
 
-                    {exp.description && (
-                      <div className="mt-1 space-y-0.5 text-[8.5pt] leading-relaxed text-slate-700">
-                        {exp.description
-                          .split('\n')
-                          .filter((line) => line.trim().length > 0)
-                          .map((point, pIdx) => (
-                            <div key={pIdx} className="flex items-start">
-                              <span className="font-bold mr-1.5 text-slate-900">•</span>
-                              <span>{point.replace(/^•\s*/, '')}</span>
-                            </div>
-                          ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-slate-400 text-[8pt] italic">No technical experience added yet.</p>
-            )}
-          </div>
+				{/* ========================================================= */}
+				{/* ================= MAIN COLUMN (Col 8) =================== */}
+				{/* ========================================================= */}
+				<main className="col-span-8 p-6 flex flex-col space-y-5 bg-white">
+					{/* Header Name & Job Title */}
+					<header className="border-b border-slate-200 pb-3 break-inside-avoid">
+						<h1 className="text-[25pt] font-black uppercase tracking-tight text-[#081432] leading-none">
+							{personal.fullName || 'YOUR NAME'}
+						</h1>
+						{/* <p className="text-[11.5pt] font-bold uppercase tracking-wider text-[#2563EB] mt-1.5 font-sans">
+              {personal.jobTitle || 'BACKEND DEVELOPER'}
+            </p> */}
+					</header>
 
-          {/* SECTION 3: Backend Projects */}
-          <div className="p-4 border-b-2 border-slate-900">
-            <h2 className="font-mono font-bold uppercase tracking-wider text-[9pt] text-slate-900 mb-2.5">
-              BACKEND PROJECTS
-            </h2>
+					{/* 1. PROFESSIONAL SUMMARY */}
+					{personal.summary && (
+						<section className="break-inside-avoid">
+							<div className="flex items-center gap-2 mb-1">
+								<div
+									className="bg-[#081432] text-white p-1 rounded-full shrink-0 flex items-center justify-center"
+									style={{ backgroundColor: '#081432', color: '#ffffff', ...forceColorStyle }}
+								>
+									<User className="w-3.5 h-3.5 text-white" />
+								</div>
+								<h2 className="text-[9.8pt] font-black uppercase tracking-wider text-[#081432]">
+									PROFESSIONAL SUMMARY
+								</h2>
+							</div>
+							<div className="w-7 h-0.5 bg-[#2563EB] mb-2"></div>
+							<p className="text-[8.5pt] leading-relaxed text-slate-700 text-justify">
+								{personal.summary}
+							</p>
+						</section>
+					)}
 
-            {projects && projects.length > 0 ? (
-              <div className="space-y-2.5">
-                {projects.map((proj, idx) => (
-                  <div key={proj.id || idx} className="break-inside-avoid">
-                    <div className="text-[9pt]">
-                      <span className="font-bold text-slate-950">{proj.name}</span>
-                      {proj.technologies && (
-                        <span className="text-slate-600 font-mono text-[8pt]">
-                          {' '}
-                          • {proj.technologies}
-                        </span>
-                      )}
-                    </div>
+					{/* 2. TECHNICAL EXPERIENCE */}
+					{experience.length > 0 && (
+						<section>
+							<div className="flex items-center gap-2 mb-1 break-inside-avoid">
+								<div
+									className="bg-[#081432] text-white p-1 rounded-full shrink-0 flex items-center justify-center"
+									style={{ backgroundColor: '#081432', color: '#ffffff', ...forceColorStyle }}
+								>
+									<Briefcase className="w-3.5 h-3.5 text-white" />
+								</div>
+								<h2 className="text-[9.8pt] font-black uppercase tracking-wider text-[#081432]">
+									EXPERIENCE
+								</h2>
+							</div>
+							<div className="w-7 h-0.5 bg-[#2563EB] mb-3"></div>
 
-                    {proj.description && (
-                      <div className="mt-0.5 space-y-0.5 text-[8.5pt] leading-relaxed text-slate-700">
-                        {proj.description
-                          .split('\n')
-                          .filter((line) => line.trim().length > 0)
-                          .map((line, pIdx) => (
-                            <div key={pIdx} className="flex items-start">
-                              <span className="font-bold mr-1.5 text-slate-900">•</span>
-                              <span>{line.replace(/^•\s*/, '')}</span>
-                            </div>
-                          ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-slate-400 text-[8pt] italic">No projects added yet.</p>
-            )}
-          </div>
+							<div className="space-y-4">
+								{experience.map((exp: any, idx: number) => (
+									<div key={exp.id || idx} className="break-inside-avoid">
+										<div className="flex items-baseline justify-between text-[9pt]">
+											<span className="font-bold text-slate-900">{exp.role}</span>
+											<span className="text-[8pt] text-slate-600 font-medium">
+												{exp.startDate} – {exp.current ? 'Present' : exp.endDate}
+											</span>
+										</div>
 
-          {/* SECTION 4: Education Box */}
-          <div className="p-4 border-b-2 border-slate-900">
-            <h2 className="font-mono font-bold uppercase tracking-wider text-[9pt] text-slate-900 mb-2">
-              EDUCATION
-            </h2>
-            <div className="space-y-1.5 text-[8.5pt]">
-              {education.map((edu, idx) => (
-                <div key={edu.id || idx} className="flex justify-between items-baseline">
-                  <div>
-                    <span className="font-bold text-slate-950">
-                      {edu.degree || 'Degree'}
-                      {edu.fieldOfStudy ? ` in ${edu.fieldOfStudy}` : ''}
-                    </span>
-                    <span className="text-slate-700"> — {edu.institution}</span>
-                  </div>
-                  <div className="text-slate-500 font-mono text-[8pt] shrink-0 ml-2">
-                    {edu.location ? `${edu.location} | ` : ''}
-                    {edu.startDate ? `${edu.startDate} – ` : ''}
-                    {edu.endDate}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+										<div className="flex items-baseline justify-between text-[8pt] text-[#2563EB] font-semibold mb-1">
+											<span>{exp.company}</span>
+											{exp.location && (
+												<span className="text-slate-600 font-normal">{exp.location}</span>
+											)}
+										</div>
 
-          {/* SECTION 5: Certifications Box */}
-          <div className="p-4">
-            <h2 className="font-mono font-bold uppercase tracking-wider text-[9pt] text-slate-900 mb-2">
-              CERTIFICATIONS
-            </h2>
-            <div className="space-y-1 text-[8.5pt]">
-              {certificates.map((cert, idx) => (
-                <div key={cert.id || idx} className="flex justify-between items-baseline">
-                  <span className="text-slate-800">
-                    <strong className="font-bold text-slate-950">{cert.name}</strong>
-                    {cert.issuer ? ` — ${cert.issuer}` : ''}
-                  </span>
-                  {cert.issueDate && (
-                    <span className="text-slate-500 font-mono text-[8pt] shrink-0 ml-2">
-                      {cert.issueDate}
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
-  );
+										{exp.description && (
+											<div className="space-y-1 text-[8.2pt] leading-relaxed text-slate-700 mt-1">
+												{exp.description
+													.split('\n')
+													.filter((line: string) => line.trim().length > 0)
+													.map((point: string, pIdx: number) => (
+														<div key={pIdx} className="flex items-start gap-1.5">
+															<span className="text-slate-800 font-bold">•</span>
+															<span>{point.replace(/^•\s*/, '')}</span>
+														</div>
+													))}
+											</div>
+										)}
+									</div>
+								))}
+							</div>
+						</section>
+					)}
+
+					{/* 3. TECHNICAL PROJECTS */}
+					{projects && projects.length > 0 && (
+						<section>
+							<div className="flex items-center gap-2 mb-1 break-inside-avoid">
+								<div
+									className="bg-[#081432] text-white p-1 rounded-full shrink-0 flex items-center justify-center"
+									style={{ backgroundColor: '#081432', color: '#ffffff', ...forceColorStyle }}
+								>
+									<FolderGit2 className="w-3.5 h-3.5 text-white" />
+								</div>
+								<h2 className="text-[9.8pt] font-black uppercase tracking-wider text-[#081432]">
+									PROJECTS
+								</h2>
+							</div>
+							<div className="w-7 h-0.5 bg-[#2563EB] mb-3"></div>
+
+							<div className="space-y-4">
+								{projects.map((proj: any, idx: number) => (
+									<div key={proj.id || idx} className="break-inside-avoid">
+										<div className="flex items-baseline justify-between">
+											<span className="font-bold text-slate-900 text-[9pt]">{proj.name}</span>
+											{proj.link && (
+												<a
+													href={proj.link.startsWith('http') ? proj.link : `https://${proj.link}`}
+													target="_blank"
+													rel="noreferrer"
+													className="text-[#2563EB] hover:underline"
+												>
+													<ExternalLink className="w-3.5 h-3.5" />
+												</a>
+											)}
+										</div>
+
+										{proj.technologies && (
+											<p className="text-[8pt] text-[#2563EB] font-semibold mb-1">
+												{proj.technologies}
+											</p>
+										)}
+
+										{proj.description && (
+											<div className="space-y-1 text-[8.2pt] leading-relaxed text-slate-700">
+												{proj.description
+													.split('\n')
+													.filter((line: string) => line.trim().length > 0)
+													.map((line: string, pIdx: number) => (
+														<div key={pIdx} className="flex items-start gap-1.5">
+															<span className="text-slate-800 font-bold">•</span>
+															<span>{line.replace(/^•\s*/, '')}</span>
+														</div>
+													))}
+											</div>
+										)}
+									</div>
+								))}
+							</div>
+						</section>
+					)}
+
+					{/* 4. ADDITIONAL INFORMATION (Renders seamlessly across Page 2 / Page 3 / Page 4) */}
+					{(courses.length > 0 || achievements.length > 0 || interests.length > 0) && (
+						<section className="break-inside-avoid border-t border-slate-200 pt-4">
+							<div className="flex items-center gap-2 mb-1">
+								<div
+									className="bg-[#081432] text-white p-1 rounded-full shrink-0 flex items-center justify-center"
+									style={{ backgroundColor: '#081432', color: '#ffffff', ...forceColorStyle }}
+								>
+									<Award className="w-3.5 h-3.5 text-white" />
+								</div>
+								<h2 className="text-[9.8pt] font-black uppercase tracking-wider text-[#081432]">
+									ADDITIONAL INFORMATION
+								</h2>
+							</div>
+							<div className="w-7 h-0.5 bg-[#2563EB] mb-3"></div>
+
+							{/* Courses */}
+							{courses.length > 0 && (
+								<div className="mb-3 break-inside-avoid">
+									<div className="flex items-center gap-1.5 font-bold text-slate-900 text-[8.5pt] mb-1">
+										<BookOpen className="w-3.5 h-3.5 text-[#2563EB]" />
+										<span>COURSES</span>
+									</div>
+									<ul className="space-y-0.5 text-[8pt] text-slate-700 pl-2">
+										{courses.map((course: any, idx: number) => (
+											<li key={idx} className="flex items-start gap-1.5">
+												<span className="text-slate-900 font-bold">•</span>
+												<span>
+													{typeof course === 'string'
+														? course
+														: `${course.name} — ${course.institution || ''}`}
+												</span>
+											</li>
+										))}
+									</ul>
+								</div>
+							)}
+
+							{/* Achievements & Interests Grid */}
+							<div className="grid grid-cols-2 gap-4">
+								{achievements.length > 0 && (
+									<div className="break-inside-avoid">
+										<div className="flex items-center gap-1.5 font-bold text-slate-900 text-[8.5pt] mb-1">
+											<Trophy className="w-3.5 h-3.5 text-[#2563EB]" />
+											<span>ACHIEVEMENTS</span>
+										</div>
+										<ul className="space-y-1 text-[8pt] text-slate-700 pl-2">
+											{achievements.map((ach: any, idx: number) => (
+												<li key={idx} className="flex items-start gap-1.5">
+													<span className="text-slate-900 font-bold">•</span>
+													<span>{typeof ach === 'string' ? ach : ach.title}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								)}
+
+								{interests.length > 0 && (
+									<div className="break-inside-avoid">
+										<div className="flex items-center gap-1.5 font-bold text-slate-900 text-[8.5pt] mb-1">
+											<Heart className="w-3.5 h-3.5 text-[#2563EB]" />
+											<span>INTERESTS</span>
+										</div>
+										<ul className="space-y-1 text-[8pt] text-slate-700 pl-2">
+											{interests.map((interest: any, idx: number) => (
+												<li key={idx} className="flex items-start gap-1.5">
+													<span className="text-slate-900 font-bold">•</span>
+													<span>{typeof interest === 'string' ? interest : interest.name}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								)}
+							</div>
+						</section>
+					)}
+				</main>
+			</div>
+		</div>
+	);
 };
 
 export default BackendDeveloper;

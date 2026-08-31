@@ -1,37 +1,72 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import Link from "next/link";
-import { useInView, animate } from "framer-motion";
-import { ScrollReveal } from "@/components/shared/ScrollReveal";
+import { animate, useInView } from "framer-motion";
 import {
+	ArrowRight,
 	ArrowUpRight,
-	BriefcaseBusiness,
+	CalendarClock,
 	Check,
 	FileText,
 	Quote,
-	ArrowRight,
 	ShieldCheck,
 	Sparkles,
 	Target,
 	TrendingUp,
 	Users,
-	Zap,
 } from "lucide-react";
-import { ButtonLink } from "@/components/shared/Button";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Reveal, Stagger, StaggerItem } from "@/components/shared/Reveal";
-import { FAQ } from "@/components/shared/FAQ";
-import { Icon } from "@/components/shared/Icon";
-import { AnimatedBackground } from "@/components/ui/animated-background";
-import { BorderTrail } from "@/components/core/border-trail";
-import { careerAccelerationServices } from "@/constants/services";
-import { reviews } from "@/constants/reviews";
-import resumepic from "../app/images/resume-half.png";
 import Image from "next/image";
-import faqpic from "../app/images/faqpic.webp";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { ButtonLink } from "@/components/shared/Button";
 import ButtonHover from "@/components/shared/ButtonHover";
 import CompaniesMarquee from "@/components/shared/CompaniesMarquee";
+import { FAQ } from "@/components/shared/FAQ";
+import { Icon } from "@/components/shared/Icon";
+import { Reveal, Stagger, StaggerItem } from "@/components/shared/Reveal";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { AnimatedBackground } from "@/components/ui/animated-background";
+import ResultsMarquee from "@/components/ui/ResultsMarquee";
+import ShowcaseSection from "@/components/ui/ShowcaseSection ";
+import TriopathComparison from "@/components/ui/TriopathComparison";
+import { reviews } from "@/constants/reviews";
+import { careerAccelerationServices } from "@/constants/services";
+import faqpic from "../app/images/faqpic.webp";
+import resumepic from "../app/images/resume-half.png";
+
+// --- Process Steps Definition ---
+const processSteps = [
+	{
+		step: 1,
+		title: "Start Your Plan",
+		description:
+			"Request a call with our team to discuss your goals and find the plan that best suits your career needs.",
+	},
+	{
+		step: 2,
+		title: "Profile Review",
+		description:
+			"Our team reviews your resume, LinkedIn profile, Github Profile, portfolio (if any), and overall professional presence to understand your strengths and areas of improvement.",
+	},
+	{
+		step: 3,
+		title: "Guidance",
+		description:
+			"You receive personalized guidance and recommendations from our experts to strengthen your profile and improve your job search strategy.",
+	},
+	{
+		step: 4,
+		title: "Start Process",
+		description:
+			"Once the review is complete, our team starts working on your profile. We optimize your resume, enhance your LinkedIn, and prepare everything needed to position you for the right opportunities.",
+	},
+	{
+		step: 5,
+		title: "We Work for You",
+		description:
+			"Our team actively applies to relevant jobs on your behalf, manages your dedicated portfolio and website (if included), and schedules screening calls with the right opportunities. You focus on getting ready — we handle the rest.",
+	},
+];
 
 // --- Animated Counter Component ---
 function AnimatedCounter({
@@ -43,21 +78,18 @@ function AnimatedCounter({
 }) {
 	const ref = useRef<HTMLSpanElement>(null);
 	const isInView = useInView(ref, { once: true, margin: "-50px" });
-
 	const shouldAnimate = !value.includes("/");
 	const numericMatch = value.match(/[\d.]+/);
 	const numericValue =
 		numericMatch && shouldAnimate ? parseFloat(numericMatch[0]) : null;
 	const prefix = value.split(/[\d.]+/)[0] || "";
 	const suffix = value.split(/[\d.]+/)[1] || "";
-
 	const [displayValue, setDisplayValue] = useState<string>(
 		numericValue !== null ? "0" : value,
 	);
 
 	useEffect(() => {
 		if (numericValue === null || !isInView) return;
-
 		const controls = animate(0, numericValue, {
 			duration: duration,
 			ease: "easeOut",
@@ -69,7 +101,6 @@ function AnimatedCounter({
 				}
 			},
 		});
-
 		return () => controls.stop();
 	}, [isInView, numericValue, duration]);
 
@@ -90,43 +121,36 @@ const stats = [
 export default function Home() {
 	return (
 		<div>
-			<section className="relative overflow-hidden bg-[#f7f9fc] pt-32 sm:pt-40">
-				<div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
-				<div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-indigo-100/30 blur-3xl" />
-				<div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-20">
+			{/* Hero Section */}
+			{/* <section className="relative overflow-hidden bg-[#f7f9fc]  "> */}
+			{/* <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
+				<div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-indigo-100/30 blur-3xl" /> */}
+			{/* <div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-20">
 					<Reveal>
 						<div className="max-w-2xl">
 							<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-2 text-xs font-semibold text-accent">
-								<span className="h-1.5 w-1.5 rounded-full bg-accent" /> Career
-								paths, made personal
+								<span className="h-1.5 w-1.5 rounded-full bg-accent" /> Career paths, made personal
 							</div>
 							<h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-[64px]">
-								Build the career{" "}
-								<span className="text-gradient">you were meant</span> to have.
+								Build the career <span className="text-gradient">you were meant</span> to have.
 							</h1>
 							<p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-								From first step to next chapter, TRIOPATH gives ambitious people
-								the clarity, confidence, and connections to move forward.
+								From first step to next chapter, TRIOPATH gives ambitious people the clarity,
+								confidence, and connections to move forward.
 							</p>
 							<div className="mt-6 flex flex-col gap-3 sm:flex-row">
-								<Link
-									href="/student/jobs"
-									className="slide-hover w-full sm:w-auto"
-								>
+								<Link href="/student/jobs" className="slide-hover w-full sm:w-auto">
 									<button className="group relative h-12 w-full sm:w-48 overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px]">
 										<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 											<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
-												Explore Careers{" "}
-												<ArrowUpRight className="ml-1.5 h-5 w-5" />
+												Explore Careers <ArrowUpRight className="ml-1.5 h-5 w-5" />
 											</span>
 											<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
-												Explore Careers{" "}
-												<ArrowRight className="ml-1.5 h-5 w-5" />
+												Explore Careers <ArrowRight className="ml-1.5 h-5 w-5" />
 											</span>
 										</div>
 									</button>
 								</Link>
-
 								<ButtonLink
 									href="/contact#contact-form"
 									variant="outline"
@@ -138,8 +162,7 @@ export default function Home() {
 							</div>
 							<div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
 								<span className="flex items-center gap-2">
-									<Check className="h-4 w-4 text-emerald-500" /> Personal
-									guidance
+									<Check className="h-4 w-4 text-emerald-500" /> Personal guidance
 								</span>
 								<span className="flex items-center gap-2">
 									<Check className="h-4 w-4 text-emerald-500" /> Proven outcomes
@@ -172,9 +195,7 @@ export default function Home() {
 											<TrendingUp className="h-4 w-4 sm:h-5 sm:w-5" />
 										</div>
 										<div>
-											<p className="text-lg font-bold text-primary sm:text-xl">
-												+91%
-											</p>
+											<p className="text-lg font-bold text-primary sm:text-xl">+91%</p>
 											<p className="text-[10px] text-muted-foreground sm:text-xs">
 												career momentum
 											</p>
@@ -194,8 +215,102 @@ export default function Home() {
 							</div>
 						</div>
 					</Reveal>
-				</div>
+				</div> */}
 
+			<section className="relative overflow-hidden bg-[#f7f9fc]  ">
+				<section className="relative min-h-[98vh] overflow-hidden ">
+					{/* Background Image */}
+					<div
+						className="absolute inset-0 bg-cover bg-center"
+						style={{
+							backgroundImage:
+								"url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+						}}
+					/>
+
+					{/* Overlay */}
+					<div className="absolute inset-0 bg-[#081330]/90" />
+
+					{/* Purple Glow */}
+					<div className="absolute inset-0 bg-gradient-to-r from-[#131E35] via-indigo-700/10 to-blue-700/25" />
+
+					<div className="relative z-10 mx-auto flex min-h-[860px] max-w-[1400px] items-center px-4 sm:px-6 lg:px-8">
+						{" "}
+						<Reveal>
+							<div className="max-w-4xl pt-20">
+								{/* Badge */}
+								<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur ">
+									✨ Paths for Careers That Move Forward
+								</div>
+
+								{/* Heading */}
+								<h1 className="text-[28px] font-bold leading-[1.05] tracking-tight text-white sm:text-[66px] lg:text-[72px]">
+									Build the Career You Were
+									<br />
+									<span className="bg-gradient-to-r from-violet-400 to-purple-600 bg-clip-text text-transparent">
+										Meant to Have.
+									</span>
+								</h1>
+
+								{/* Description */}
+								<p className="mt-8 max-w-3xl text-lg leading-relaxed text-white/80 sm:text-xl">
+									Career acceleration, recruitment & staffing, AI resume
+									building, and intelligent job matching — engineered for
+									students and professionals ready to move forward.
+								</p>
+
+								{/* Buttons */}
+								<div className="mt-10 flex flex-col gap-4 sm:flex-row">
+									{/* <Link href="/student/jobs">
+										<button className="flex h-14 items-center justify-center rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 px-8 text-lg font-semibold text-white shadow-xl transition hover:scale-105">
+											Explore Careers
+											<ArrowRight className="ml-2 h-5 w-5" />
+										</button>
+									</Link> */}
+									<Link href="/student/jobs" className=" w-full sm:w-auto">
+										<button className="group relative h-12 w-full sm:w-48 overflow-hidden rounded-xl bg-[#131E35]/70 font-semibold text-white shadow-md [perspective:1000px] border border-white/10">
+											<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
+												<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
+													Explore Careers{" "}
+													<ArrowUpRight className="ml-1.5 h-5 w-5" />
+												</span>
+												<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
+													Explore Careers{" "}
+													<ArrowRight className="ml-1.5 h-5 w-5" />
+												</span>
+											</div>
+										</button>
+									</Link>
+
+									<Link href="/contact#contact-form">
+										<button className="flex py-[9px] items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-4 text-[16px] font-semibold text-white backdrop-blur transition hover:bg-white/20 w-full gap-2">
+											Schedule Consultation <CalendarClock size={15} />
+										</button>
+									</Link>
+									{/* <ButtonLink
+									href="/contact#contact-form"
+									variant="outline"
+									size="lg"
+									className="shadow-[0_2px_7px_rgba(0,0,0,0.1)] transition-shadow"
+								>
+									Schedule Consultation
+								</ButtonLink> */}
+								</div>
+
+								{/* Trust Line */}
+								<div className="mt-5 flex items-center gap-3 text-white/75">
+									<ShieldCheck className="h-5 w-5 text-amber-400" />
+									<span className="text-base text-[12.8px] sm:text-[16px]">
+										Trusted by 1000+ candidates and 30+ hiring teams
+									</span>
+								</div>
+							</div>
+						</Reveal>
+					</div>
+
+					{/* Bottom Fade */}
+					<div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent" />
+				</section>
 				{/* Animated Counter Stats Section */}
 				<div className="relative border-y border-border bg-white">
 					<div className="mx-auto grid max-w-[1400px] grid-cols-2 px-4 py-7 sm:px-6 md:grid-cols-4 lg:px-8">
@@ -217,9 +332,10 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			
-										<CompaniesMarquee/>
 
+			<CompaniesMarquee />
+
+			{/* Why TRIOPATH Section */}
 			<ScrollReveal>
 				<section className="bg-white py-15 sm:py-20">
 					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -243,8 +359,6 @@ export default function Home() {
 									</div>
 								</div>
 							</Reveal>
-
-
 							<Reveal delay={0.1}>
 								<div>
 									<SectionHeading
@@ -253,8 +367,8 @@ export default function Home() {
 										description="Triopath is a career acceleration platform focused on preparing individuals for today’s competitive job market across IT and Non-IT sectors. We work with students, graduates, and professionals to strengthen profiles, sharpen skills, and connect preparation with opportunity.."
 										align="left"
 									/>
-									<div className="mt-8 grid gap-5 sm:grid-cols-2 ">
-										<div className="rounded-2xl border border-border bg-[#f8fafc] p-5 hover:scale-105 transition-all duration-300 ">
+									<div className="mt-8 grid gap-5 sm:grid-cols-2">
+										<div className="rounded-2xl border border-border bg-[#f8fafc] p-5 hover:scale-105 transition-all duration-300">
 											<Target className="h-6 w-6 text-accent" />
 											<h3 className="mt-4 font-semibold text-primary">
 												Clarity over noise
@@ -275,30 +389,23 @@ export default function Home() {
 											</p>
 										</div>
 									</div>
-
-									{/* <Link href="/student/jobs" className="slide-hover">
-										<button className="group relative h-12 w-[35%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-black shadow-md [perspective:1000px] mt-6">
-											<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
-												<span className="absolute inset-0 flex items-center justify-center bg-white px-4 [backface-visibility:hidden] border-[1px]">
-													More about Triopath{" "}
-													<ArrowUpRight className="ml-1.5 h-5 w-5" />
-												</span>
-												<span className="absolute inset-0 flex items-center justify-center bg-gray px-4 text-white [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
-													More about Triopath{" "}
-													<ArrowRight className="ml-1.5 h-5 w-5" />
-												</span>
-											</div>
-										</button>
-									</Link> */}
 									<ButtonHover
 										text="More About Triopath"
 										href="/contact#contact-form"
-										className="text-[14px] w-[40%] mt-3"
+										className="text-[14px] md:w-[40%] mt-3 w-[60%]"
 									/>
 								</div>
 							</Reveal>
 						</div>
 					</div>
+				</section>
+			</ScrollReveal>
+
+			<ScrollReveal>
+				<section className="flex min-h-[150px] items-center justify-center bg-gradient-to-r from-[#0F1930] via-[#111C34] to-[#1C254D] px-6">
+					<p className="text-center font-serif text-3xl font-semibold italic text-white sm:text-4xl">
+						“Your future deserves a better career path.”
+					</p>
 				</section>
 			</ScrollReveal>
 
@@ -359,121 +466,150 @@ export default function Home() {
 				</section>
 			</ScrollReveal>
 
+			{/* ==================================================== */}
+			{/* THE TRIOPATH PROCESS SECTION */}
+			{/* ==================================================== */}
 			<ScrollReveal>
 				<section className="navy-gradient relative overflow-hidden py-20 sm:py-28">
+					{/* Glow ambient background lights */}
 					<div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-accent/15 blur-3xl" />
-					<div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+					<div className="pointer-events-none absolute bottom-0 left-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
+
+					<div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+						{/* Header */}
 						<Reveal>
-							<div>
-								<p className="text-sm font-semibold uppercase tracking-wider text-blue-100">
-									Made for momentum
-								</p>
-								<h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-									Your future deserves a better career path.
+							<div className="mb-14 text-center">
+								<h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+									THE <span className="text-sky-400">TRIOPATH</span> PROCESS
 								</h2>
-								<p className="mt-5 max-w-lg text-sm leading-relaxed text-white mb-4">
-									Every opportunity starts with the right preparation. We help
-									you turn ambition into an actionable plan — and an actionable
-									plan into progress.
+
+								<p className="mx-auto mt-4 max-w-3xl text-base text-blue-100/80">
+									Our proven 5-step process designed to optimize your profile
+									and land you the right opportunities.
 								</p>
-								{/* <ButtonLink href="/pricing" variant="white" className="mt-8">
-                See how we can help <ArrowRight className="ml-2 h-4 w-4" />
-              </ButtonLink> */}
-
-								<ButtonHover
-										text="See how we can help"
-										href="/contact#contact-form"
-										className="text-[14px] w-[40%] mt-3 text-white"
-									/>
 							</div>
 						</Reveal>
 
-
+						{/* Process Timeline Card */}
+						{/* Process Timeline Card */}
 						<Reveal delay={0.1}>
-							<div className="grid grid-cols-2 gap-4 sm:gap-5">
-								{/* Card 1 */}
-								<div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-									<BorderTrail
-										className="bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent"
-										size={120}
-										transition={{
-											repeat: Infinity,
-											duration: 4,
-											ease: "linear",
-										}}
+							<div
+								className="
+      relative
+      rounded-3xl
+      border border-white/15
+      bg-white/5
+      p-6
+      shadow-2xl
+      backdrop-blur-md
+      sm:p-10
+    "
+							>
+								{/* =========================================
+        CONTINUOUS TIMELINE
+    ========================================== */}
+								<div className="relative">
+									{/* ONE continuous line behind all circles */}
+									<div
+										className="
+    pointer-events-none
+    absolute
+    left-5
+    top-5
+    bottom-5
+    w-[2px]
+    -translate-x-1/2
+    bg-white/30
+    sm:left-6
+    sm:top-6
+    sm:bottom-6
+  "
 									/>
-									<Sparkles className="h-6 w-6 text-blue-300" />
-									<p className="mt-6 text-3xl font-bold text-white">
-										<AnimatedCounter value="3.2x" duration={0.8} />
-									</p>
-									<p className="mt-1 text-sm text-white/50">
-										faster career progress
-									</p>
-								</div>
 
-								{/* Card 2 */}
-								<div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-									<BorderTrail
-										className="bg-gradient-to-r from-emerald-400 via-teal-400 to-transparent"
-										size={120}
-										transition={{
-											repeat: Infinity,
-											duration: 4,
-											ease: "linear",
-										}}
-									/>
-									<ShieldCheck className="h-6 w-6 text-emerald-300" />
-									<p className="mt-6 text-3xl font-bold text-white">
-										<AnimatedCounter value="92%" duration={0.8} />
-									</p>
-									<p className="mt-1 text-sm text-white/50">
-										of candidates recommend us
-									</p>
-								</div>
+									{/* Steps */}
+									<div className="relative space-y-8 sm:space-y-10">
+										{processSteps.map((item) => (
+											<div
+												key={item.step}
+												className="relative flex items-start gap-4 sm:gap-6"
+											>
+												{/* Circle */}
+												<div
+													className="
+                relative
+                z-10
+                flex
+                h-10
+                w-10
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-white
+                text-[#0B1E48]
+                shadow-lg
+                sm:h-12
+                sm:w-12
+              "
+												>
+													<span className="text-base font-black sm:text-lg">
+														{item.step}
+													</span>
+												</div>
 
-								{/* Card 3 */}
-								<div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-									<BorderTrail
-										className="bg-gradient-to-r from-pink-400 via-purple-400 to-transparent"
-										size={120}
-										transition={{
-											repeat: Infinity,
-											duration: 4,
-											ease: "linear",
-										}}
-									/>
-									<BriefcaseBusiness className="h-6 w-6 text-pink-300" />
-									<p className="mt-6 text-3xl font-bold text-white">
-										<AnimatedCounter value="30+" duration={0.8} />
-									</p>
-									<p className="mt-1 text-sm text-white/50">hiring partners</p>
-								</div>
+												{/* Content */}
+												<div className="min-w-0 flex-1 pb-1">
+													<h3
+														className="
+                  text-lg
+                  font-bold
+                  tracking-wide
+                  text-white
+                  sm:text-xl
+                "
+													>
+														{item.title}
+													</h3>
 
-								{/* Card 4 */}
-								<div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-									<BorderTrail
-										className="bg-gradient-to-r from-amber-400 via-yellow-400 to-transparent"
-										size={120}
-										transition={{
-											repeat: Infinity,
-											duration: 4,
-											ease: "linear",
-										}}
-									/>
-									<Zap className="h-6 w-6 text-amber-300" />
-									<p className="mt-6 text-3xl font-bold text-white">
-										<AnimatedCounter value="60 hrs" duration={0.8} />
-									</p>
-									<p className="mt-1 text-sm text-white/50">
-										to your first matched role
-									</p>
+													<p
+														className="
+                  mt-1
+                  text-sm
+                  leading-relaxed
+                  text-gray-500
+                  sm:text-[14.5px]
+                "
+													>
+														{item.description}
+													</p>
+
+													{/* Divider */}
+													<div className="mt-4 w-full border-b border-white/15" />
+												</div>
+											</div>
+										))}
+									</div>
 								</div>
 							</div>
 						</Reveal>
+
+						{/* Get Started */}
+						<div className="mt-8 flex w-full justify-center">
+							<ButtonHover
+								text="Get Started"
+								href="/contact#fillout"
+								className="
+            w-[11.2rem]
+            text-sm
+            text-white
+            hover:text-gray-300
+          "
+							/>
+						</div>
 					</div>
 				</section>
 			</ScrollReveal>
-
+			{/* Resume Feature Section */}
 			<ScrollReveal>
 				<section className="bg-white py-16 sm:py-20 lg:py-28">
 					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -524,19 +660,15 @@ export default function Home() {
 									</ButtonLink>
 								</div>
 							</Reveal>
-
 							<Reveal delay={0.1}>
 								<div className="rounded-2xl border border-border bg-[#f7f9fc] p-4 shadow-soft sm:rounded-3xl sm:p-6 lg:p-8">
 									<div className="group overflow-hidden rounded-xl bg-white p-4 shadow-soft sm:rounded-2xl sm:p-6">
 										<Image
 											src={resumepic}
 											alt="TRIOPATH logo"
-											// width={24}
-											// height={24}
 											className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
 										/>
 									</div>
-
 									{/* Fully Responsive Resume Banner Link */}
 									<Link
 										href="/resume"
@@ -553,7 +685,6 @@ export default function Home() {
 													<ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
 												</span>
 											</span>
-
 											{/* Bottom Face (Hover State) */}
 											<span className="absolute inset-0 flex items-center justify-between bg-white px-4 sm:px-5 py-3 sm:py-4 text-primary [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)] sm:[transform:rotateX(-90deg)_translateZ(32px)]">
 												<span className="text-xs sm:text-sm font-semibold text-primary truncate pr-2">
@@ -573,15 +704,14 @@ export default function Home() {
 			</ScrollReveal>
 
 			{/* Stories Section with AnimatedBackground */}
-			<ScrollReveal>
+			{/* <ScrollReveal>
 				<section className="bg-[#f7f9fc] py-20 sm:py-28">
-					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8"  >
+					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 						<SectionHeading
 							eyebrow="Stories that inspire"
 							title="Progress looks different for everyone."
 							description="The best proof is in the journeys of people who chose to take their next step with TRIOPATH."
-							  descriptionClassName="text-[15px]"
-
+							descriptionClassName="text-[15px]"
 						/>
 						<Stagger>
 							<div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -635,25 +765,27 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-			</ScrollReveal>
+			</ScrollReveal> */}
 
+			<ResultsMarquee />
+
+			{/* FAQ Section */}
 			<ScrollReveal>
 				<section className="bg-white py-20 sm:py-28" id="FAQ">
 					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 						<div className="flex justify-center mb-[4rem] text-[40px]">
-							<h1 className="font-semibold uppercase ">
+							<h1 className="font-semibold uppercase">
 								Frequently asked Questions
 							</h1>
 						</div>
 						<div className="grid items-stretch gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
 							<Reveal className="h-full">
 								<div
-									className="relative flex h-full min-h-[380px] flex-col justify-center overflow-hidden rounded-3xl bg-conatin bg-center bg-no-repeat p-8 sm:p-12 shadow-soft object-fill"
+									className="relative flex h-full min-h-[380px] flex-col justify-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat p-8 sm:p-12 shadow-soft object-cover"
 									style={{ backgroundImage: `url(${faqpic.src || faqpic})` }}
 								>
 									{/* Dark Overlay for Readability */}
 									<div className="absolute inset-0 bg-slate-900/50 backdrop-blur-[0.5px]" />
-
 									{/* Heading Content */}
 									<div className="relative z-10 hover:scale-110 transition-all duration-600">
 										<SectionHeading
@@ -666,7 +798,6 @@ export default function Home() {
 									</div>
 								</div>
 							</Reveal>
-
 							<Reveal delay={0.1} className="h-full">
 								<FAQ />
 							</Reveal>
@@ -675,8 +806,11 @@ export default function Home() {
 				</section>
 			</ScrollReveal>
 
+			<TriopathComparison />
+
+			{/* Call-to-Action Footer Section */}
 			<ScrollReveal>
-				<section className="px-4 pb-20 sm:px-6 sm:pb-28 lg:px-8">
+				<section className="px-4 pb-20 sm:px-6 sm:pb-28 lg:px-8 mt-10">
 					<div className="navy-gradient relative mx-auto max-w-[1400px] overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-12 sm:py-20">
 						<div className="pointer-events-none absolute left-1/4 top-0 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
 						<div className="relative">
@@ -690,8 +824,8 @@ export default function Home() {
 								Get the clarity, tools, and support you need to make your next
 								move your best one yet.
 							</p>
-							<Link href="/student/jobs" className="">
-								<button className="group relative h-12 w-[20%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[0.5px] border-gray-400 hover:border-green-100">
+							<Link href="/contact#fillout" className="">
+								<button className="group relative h-12 md:w-[20%] w-[70%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[0.5px] border-gray-400 hover:border-green-100">
 									<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 										<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
 											Schedule a consultation{" "}
@@ -708,6 +842,8 @@ export default function Home() {
 					</div>
 				</section>
 			</ScrollReveal>
+
+			<ShowcaseSection />
 		</div>
 	);
 }

@@ -1,78 +1,71 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import {
-	ArrowRight,
-	Users,
-	Award,
-	TrendingUp,
-	ShieldCheck,
-	ArrowUpRight,
-} from "lucide-react";
-import { ButtonLink } from "@/components/shared/Button";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Reveal, Stagger, StaggerItem } from "@/components/shared/Reveal";
-import { ValueCards } from "@/components/shared/ValueCards";
-import { StatCounter } from "@/components/shared/StatCounter";
-import { BorderTrail } from "@/components/core/border-trail";
-import StudioGallery from "@/components/shared/StudioGallery";
-import { ScrollReveal } from "@/components/shared/ScrollReveal";
+import { ArrowRight, ArrowUpRight, Award, ShieldCheck, TrendingUp, Users } from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { BorderTrail } from '@/components/core/border-trail';
+import { ButtonLink } from '@/components/shared/Button';
+import { Reveal, Stagger, StaggerItem } from '@/components/shared/Reveal';
+import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { StatCounter } from '@/components/shared/StatCounter';
+import StudioGallery from '@/components/shared/StudioGallery';
+import { ValueCards } from '@/components/shared/ValueCards';
 
 export const metadata: Metadata = {
-	title: "Who We Are",
+	title: 'Who We Are',
 	description:
-		"TRIOPATH Careers is a career acceleration and recruitment agency helping professionals find their path forward.",
+		'TRIOPATH Careers is a career acceleration and recruitment agency helping professionals find their path forward.',
 };
 
 const stats = [
-	["4+", "Years of experience"],
-	["5000+", "Candidates guided"],
-	["30+", "Hiring partners"],
-	["88%", "Success rate"],
+	['4+', 'Years of experience'],
+	['5000+', 'Candidates guided'],
+	['30+', 'Hiring partners'],
+	['88%', 'Success rate'],
 ];
 
 const whyUs = [
 	{
-		icon: "Users",
-		title: "People-first",
-		text: "Real mentors and recruiters who see the person behind the resume.",
+		icon: 'Users',
+		title: 'People-first',
+		text: 'Real mentors and recruiters who see the person behind the resume.',
 	},
 	{
-		icon: "Award",
-		title: "Proven results",
-		text: "88% of our candidates land interviews within 60 days.",
+		icon: 'Award',
+		title: 'Proven results',
+		text: '88% of our candidates land interviews within 60 days.',
 	},
 	{
-		icon: "ShieldCheck",
-		title: "Trust & transparency",
-		text: "No false promises. Just honest guidance and measurable progress.",
+		icon: 'ShieldCheck',
+		title: 'Trust & transparency',
+		text: 'No false promises. Just honest guidance and measurable progress.',
 	},
 	{
-		icon: "TrendingUp",
-		title: "Momentum-driven",
-		text: "We focus on building career momentum, not just one-time placements.",
+		icon: 'TrendingUp',
+		title: 'Momentum-driven',
+		text: 'We focus on building career momentum, not just one-time placements.',
 	},
 ];
 
 const approachSteps = [
 	{
-		number: "01",
-		title: "Discover",
-		text: "We understand your goals, experience, strengths, and the direction you want your career to take.",
+		number: '01',
+		title: 'Discover',
+		text: 'We understand your goals, experience, strengths, and the direction you want your career to take.',
 	},
 	{
-		number: "02",
-		title: "Prepare",
-		text: "We help strengthen your resume, skills, interview readiness, and overall professional positioning.",
+		number: '02',
+		title: 'Prepare',
+		text: 'We help strengthen your resume, skills, interview readiness, and overall professional positioning.',
 	},
 	{
-		number: "03",
-		title: "Connect",
-		text: "We help you identify relevant opportunities and connect with employers that match your career direction.",
+		number: '03',
+		title: 'Connect',
+		text: 'We help you identify relevant opportunities and connect with employers that match your career direction.',
 	},
 	{
-		number: "04",
-		title: "Grow",
-		text: "We focus on creating long-term career momentum rather than simply helping you find one opportunity.",
+		number: '04',
+		title: 'Grow',
+		text: 'We focus on creating long-term career momentum rather than simply helping you find one opportunity.',
 	},
 ];
 
@@ -90,10 +83,9 @@ export default function AboutPage() {
 							We help careers move forward
 						</h1>
 						<p className="mx-auto mt-6 max-w-2xl text-md leading-relaxed text-muted-foreground">
-							TRIOPATH Careers was founded on a simple belief: every candidate
-							deserves a path forward. We combine expert career guidance, resume
-							optimization, recruitment, and staffing to help professionals and
-							employers find their perfect match.
+							TRIOPATH Careers was founded on a simple belief: every candidate deserves a path
+							forward. We combine expert career guidance, resume optimization, recruitment, and
+							staffing to help professionals and employers find their perfect match.
 						</p>
 					</Reveal>
 				</div>
@@ -126,16 +118,14 @@ export default function AboutPage() {
 									align="left"
 								/>
 								<p className="mt-5 text-base leading-relaxed text-muted-foreground">
-									We saw too many talented people stuck — not because they
-									lacked ability, but because they lacked guidance and approach.
-									So we built a platform that combines human expertise with
-									smart technology to help every candidate find their path
+									We saw too many talented people stuck — not because they lacked ability, but
+									because they lacked guidance and approach. So we built a platform that combines
+									human expertise with smart technology to help every candidate find their path
 									forward.
 								</p>
 								<p className="mt-4 text-base leading-relaxed text-muted-foreground">
-									Today, TRIOPATH Careers is trusted by over 30 hiring partners
-									and has guided more than 5,000 candidates toward meaningful
-									careers.
+									Today, TRIOPATH Careers is trusted by over 30 hiring partners and has guided more
+									than 5,000 candidates toward meaningful careers.
 								</p>
 							</div>
 						</Reveal>
@@ -146,10 +136,7 @@ export default function AboutPage() {
 			<ScrollReveal>
 				<section className="section-tight bg-[#f7f9fc]">
 					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-						<SectionHeading
-							eyebrow="What drives us"
-							title="Our mission, vision, and values."
-						/>
+						<SectionHeading eyebrow="What drives us" title="Our mission, vision, and values." />
 						<div className="mt-10 sm:mt-12">
 							<ValueCards />
 						</div>
@@ -164,28 +151,19 @@ export default function AboutPage() {
 			<ScrollReveal>
 				<section className="section-tight bg-white">
 					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-						<SectionHeading
-							eyebrow="Why TRIOPATH"
-							title="What sets us apart."
-						/>
+						<SectionHeading eyebrow="Why TRIOPATH" title="What sets us apart." />
 						<Stagger>
 							<div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 								{whyUs.map((item) => (
 									<StaggerItem key={item.title}>
 										<div className="h-full rounded-2xl border border-border bg-[#f8fafc] p-6 text-center">
 											<div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
-												{item.icon === "Users" && <Users className="h-6 w-6" />}
-												{item.icon === "Award" && <Award className="h-6 w-6" />}
-												{item.icon === "ShieldCheck" && (
-													<ShieldCheck className="h-6 w-6" />
-												)}
-												{item.icon === "TrendingUp" && (
-													<TrendingUp className="h-6 w-6" />
-												)}
+												{item.icon === 'Users' && <Users className="h-6 w-6" />}
+												{item.icon === 'Award' && <Award className="h-6 w-6" />}
+												{item.icon === 'ShieldCheck' && <ShieldCheck className="h-6 w-6" />}
+												{item.icon === 'TrendingUp' && <TrendingUp className="h-6 w-6" />}
 											</div>
-											<h3 className="mt-5 font-semibold text-primary">
-												{item.title}
-											</h3>
+											<h3 className="mt-5 font-semibold text-primary">{item.title}</h3>
 											<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
 												{item.text}
 											</p>
@@ -224,7 +202,7 @@ export default function AboutPage() {
 												transition={{
 													repeat: Infinity,
 													duration: 4,
-													ease: "linear",
+													ease: 'linear',
 												}}
 											/>
 
@@ -238,9 +216,7 @@ export default function AboutPage() {
 													<ArrowRight className="hidden h-5 w-5 text-muted-foreground/50 lg:block" />
 												</div>
 
-												<h3 className="mt-6 text-lg font-semibold text-primary">
-													{step.title}
-												</h3>
+												<h3 className="mt-6 text-lg font-semibold text-primary">{step.title}</h3>
 
 												<p className="mt-3 text-sm leading-relaxed text-muted-foreground">
 													{step.text}
@@ -280,20 +256,17 @@ export default function AboutPage() {
 							Ready to move your career forward?
 						</h2>
 						<p className="mx-auto mt-4 mb-4 max-w-xl text-white/60 sm:whitespace-nowrap">
-							Join thousands of professionals who chose TRIOPATH to guide their
-							next step.
+							Join thousands of professionals who chose TRIOPATH to guide their next step.
 						</p>
 						{/* <ButtonLink href="/contact#contact-form" variant="white" className="mt-8">Schedule a consultation <ArrowRight className="ml-2 h-4 w-4" /></ButtonLink> */}
 						<Link href="/student/jobs" className="">
 							<button className="group relative h-12 w-[20%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[0.5px] border-gray-400 hover:border-green-100">
 								<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 									<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
-										Schedule a consultation{" "}
-										<ArrowUpRight className="ml-1.5 h-5 w-5" />
+										Schedule a consultation <ArrowUpRight className="ml-1.5 h-5 w-5" />
 									</span>
 									<span className="absolute inset-0 flex items-center justify-center bg-white px-4 text-black [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(24px)]">
-										Schedule a consultation{" "}
-										<ArrowRight className="ml-1.5 h-5 w-5" />
+										Schedule a consultation <ArrowRight className="ml-1.5 h-5 w-5" />
 									</span>
 								</div>
 							</button>
