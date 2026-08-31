@@ -1,5 +1,7 @@
 // types/resume.ts
 
+import { StaticImageData } from "next/image";
+
 export interface SkillCategory {
 	id: string;
 	category: string;
@@ -72,11 +74,22 @@ export interface ResumeData {
 	certificates?: Certificate[];
 }
 
+// export interface ResumeTemplateMeta {
+// 	id: string;
+// 	name: string;
+// 	description: string;
+// 	category: string;
+// 	accentColor?: string;
+// 	isPopular?: boolean;
+// }
+
+
 export interface ResumeTemplateMeta {
 	id: string;
 	name: string;
 	description: string;
 	category: string;
+	image: StaticImageData;
 	accentColor?: string;
 	isPopular?: boolean;
 }

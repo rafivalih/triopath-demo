@@ -228,7 +228,7 @@ export default function TemplatesPage() {
 	const router = useRouter();
 	const { activeTemplate, setActiveTemplate } = useResume();
 	const [selectedCategory, setSelectedCategory] = useState<CategoryType>('All');
-
+	
 	const filteredTemplates =
 		selectedCategory === 'All'
 			? RESUME_TEMPLATES

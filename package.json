@@ -80,6 +80,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.10",
-    "@types/html2pdf.js": "^0.10.0"
+    "@types/html2pdf.js": "^0.10.0",
+    "@types/react-google-recaptcha": "^2.1.9"
   }
 }
