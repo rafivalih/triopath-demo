@@ -65,7 +65,7 @@ export default function CareerAccelerationPage() {
 						title="Everything you need to move forward."
 						description="Comprehensive career services designed to support you at every stage of your journey."
 					/>
-					<Stagger>
+					{/* <Stagger>
 						<div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 							<AnimatedBackground
 								className="rounded-2xl bg-[#f7f9fc] shadow-premium border border-accent/70"
@@ -80,18 +80,18 @@ export default function CareerAccelerationPage() {
 									<div key={service.id} data-id={`page-service-${index}`} className="h-full">
 										<StaggerItem className="h-full">
 											<div className="group h-full rounded-2xl border border-border/60 bg-white/80 p-6 transition-all duration-300 hover:-translate-y-1">
-												<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
+												<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent ">
 													<Icon name={service.icon} className="h-5 w-5" />
 												</div>
-												<h3 className="mt-5 font-semibold text-primary">{service.title}</h3>
-												<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+												<h3 className="mt-5 font-semibold text-primary text-lg">{service.title}</h3>
+												<p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
 													{service.description}
 												</p>
 												<ul className="mt-4 space-y-1.5">
 													{service.features.map((f) => (
 														<li
 															key={f}
-															className="flex items-center gap-2 text-xs text-muted-foreground"
+															className="flex items-center gap-2 text-md text-muted-foreground"
 														>
 															<Check className="h-3.5 w-3.5 text-emerald-500" /> {f}
 														</li>
@@ -103,7 +103,56 @@ export default function CareerAccelerationPage() {
 								))}
 							</AnimatedBackground>
 						</div>
-					</Stagger>
+					</Stagger> */}
+
+					<Stagger>
+	<div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+		{careerAccelerationServices.map((service, index) => (
+			<div key={service.id} className="h-full">
+				<StaggerItem className="h-full">
+					<AnimatedBackground
+						className="h-full rounded-2xl bg-[#f7f9fc] shadow-premium border border-accent/70"
+						transition={{
+							type: 'spring',
+							bounce: 0.2,
+							duration: 0.6,
+						}}
+						enableHover
+					>
+						<div
+							data-id={`page-service-${index}`}
+							className="group h-full rounded-2xl border border-border/60 bg-white/80 p-6 transition-all duration-300 hover:-translate-y-1"
+						>
+							<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
+								<Icon name={service.icon} className="h-5 w-5" />
+							</div>
+
+							<h3 className="mt-5 font-semibold text-primary text-lg">
+								{service.title}
+							</h3>
+
+							<p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+								{service.description}
+							</p>
+
+							<ul className="mt-4 space-y-1.5">
+								{service.features.map((f) => (
+									<li
+										key={f}
+										className="flex items-center gap-2 text-[14.5px] text-muted-foreground"
+									>
+										<Check className="h-3.5 w-3.5 text-emerald-500" />
+										{f}
+									</li>
+								))}
+							</ul>
+						</div>
+					</AnimatedBackground>
+				</StaggerItem>
+			</div>
+		))}
+	</div>
+</Stagger>
 				</div>
 			</section>
 
