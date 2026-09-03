@@ -237,7 +237,7 @@ export default function Home() {
 					<div className="relative z-10 mx-auto flex min-h-[860px] max-w-[1400px] items-center px-4 sm:px-6 lg:px-8">
 						{" "}
 						<Reveal>
-							<div className="max-w-4xl pt-20">
+							<div className="max-w-4xl pt-1">
 								{/* Badge */}
 								<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur ">
 									✨ Paths for Careers That Move Forward
@@ -253,7 +253,7 @@ export default function Home() {
 								</h1>
 
 								{/* Description */}
-								<p className="mt-8 max-w-3xl text-lg leading-relaxed text-white/80 sm:text-xl">
+								<p className="sm:mt-8 mt-4 max-w-3xl text-md leading-relaxed text-white/80 sm:text-xl">
 									Career acceleration, recruitment & staffing, AI resume
 									building, and intelligent job matching — engineered for
 									students and professionals ready to move forward.
@@ -300,7 +300,7 @@ export default function Home() {
 								{/* Trust Line */}
 								<div className="mt-5 flex items-center gap-3 text-white/75">
 									<ShieldCheck className="h-5 w-5 text-amber-400" />
-									<span className="text-base text-[12.8px] sm:text-[16px]">
+									<span className=" text-[13px] sm:text-[16px]">
 										Trusted by 1000+ candidates and 30+ hiring teams
 									</span>
 								</div>
@@ -392,7 +392,7 @@ export default function Home() {
 									<ButtonHover
 										text="More About Triopath"
 										href="/contact#contact-form"
-										className="text-[14px] md:w-[40%] mt-3 w-[60%]"
+										className="text-[14px] md:w-[40%] mt-3 w-[68%] mb-5 sm:mb-1"
 									/>
 								</div>
 							</Reveal>
@@ -774,7 +774,7 @@ export default function Home() {
 				<section className="bg-white py-20 sm:py-28" id="FAQ">
 					<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 						<div className="flex justify-center mb-[4rem] text-[40px]">
-							<h1 className="font-semibold uppercase">
+							<h1 className="font-semibold uppercase sm:text-5xl text-xl text-center">
 								Frequently asked Questions
 							</h1>
 						</div>
@@ -820,12 +820,12 @@ export default function Home() {
 							<h2 className="mx-auto mt-4 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
 								Ready to move your career forward?
 							</h2>
-							<p className="mx-auto mt-4 max-w-xl text-white/60 mb-5">
+							<p className="mx-auto mt-4 max-w-xl text-white/60 mb-5 sm:text-md text-sm ">
 								Get the clarity, tools, and support you need to make your next
 								move your best one yet.
 							</p>
 							<Link href="/contact#fillout" className="">
-								<button className="group relative h-12 md:w-[20%] w-[70%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[0.5px] border-gray-400 hover:border-green-100">
+								<button className="group relative h-12 md:w-[20%] w-[80%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] border-[0.5px] border-gray-400 hover:border-green-100">
 									<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 										<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
 											Schedule a consultation{" "}

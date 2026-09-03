@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, 	CalendarClock, } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/shared/Button';
@@ -16,18 +16,18 @@ export const metadata: Metadata = {
 
 export default function CareerAccelerationPage() {
 	return (
-		<div className="pt-28">
+		<div className="sm:pt-[90px] pt-[70px]">
 			<section className="premium-page-hero relative overflow-hidden py-14 sm:py-20">
 				<div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
-				<div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+				<div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
 					<Reveal>
-						<p className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
+						<p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">
 							Triopath Career Acceleration Services
 						</p>
-						<h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+						<h1 className=" font-bold  text-primary sm:text-[40px] text-[25px]">
 							Accelerate your career with expert guidance.
 						</h1>
-						<p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+						<p className="mx-auto mt-2 max-w-2xl sm:text-lg text-sm leading-relaxed text-muted-foreground">
 							From resume optimization to interview preparation, we provide everything you need to
 							land your next role — faster and with confidence.
 						</p>
@@ -49,9 +49,9 @@ export default function CareerAccelerationPage() {
 								href="/contact#contact-form"
 								variant="outline"
 								size="lg"
-								className="hover shadow-[0_5px_7px_rgba(0,0,0,0.1)] transition-shadow"
+								className="hover shadow-[0_5px_7px_rgba(0,0,0,0.1)] transition-shadow flex justify-center items-center gap-2"
 							>
-								Schedule Consultation
+								Schedule Consultation <CalendarClock size={15} />
 							</ButtonLink>
 						</div>
 					</Reveal>
@@ -195,7 +195,7 @@ export default function CareerAccelerationPage() {
 								</ButtonLink> */}
 
 								<Link href="/pricing" className="slide-hover">
-									<button className="group relative h-12 w-[40%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] mt-6">
+									<button className="group relative h-12 sm:w-[40%] w-[70%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] mt-6">
 										<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 											<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
 												Explore job opportunities <ArrowUpRight className="ml-1.5 h-5 w-5" />
@@ -268,7 +268,7 @@ export default function CareerAccelerationPage() {
 							Get started with a personalized career consultation today.
 						</p>
 						<Link href="/student/jobs" className="">
-							<button className="group relative h-12 w-[20%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] mt-6">
+							<button className="group relative h-12 md:w-[20%] w-[80%] overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px] mt-6">
 								<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
 									<span className="absolute inset-0 flex items-center justify-center bg-primary px-4 [backface-visibility:hidden]">
 										Schedule a consultation <ArrowUpRight className="ml-1.5 h-5 w-5" />

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RecruitmentPage() {
 	return (
-		<div className="pt-[84px] ">
+		<div className="sm:pt-[90px] pt-[70px]">
 			<section className="premium-page-hero relative overflow-hidden py-[80px] sm:py-[100px] ">
 				<div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
 				<div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -25,14 +25,14 @@ export default function RecruitmentPage() {
 						<p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">
 							Recruitment & Staffing Services
 						</p>
-						<h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+						<h1 className="text-[27px] font-bold tracking-tight text-primary sm:text-5xl">
 							Find the right talent, faster.
 						</h1>
-						<p className="mx-auto mt-6 max-w-2xl text-md leading-relaxed text-muted-foreground space-x-0">
+						<p className="mx-auto mt-4 max-w-4xl text-md leading-relaxed text-muted-foreground space-x-0">
 							From talent sourcing and screening to intelligent candidate matching, we provide
 							comprehensive recruitment and staffing solutions tailored to your hiring needs..
 						</p>
-						<div className="mt-8 flex flex-col gap-5 sm:flex-row justify-center">
+						<div className="mt-8 flex flex-col sm:gap-5 gap-2 sm:flex-row justify-center">
 							<Link href="/contact#contact-form" className="w-full sm:w-auto">
 								<button className="group relative h-12 w-full sm:w-48 overflow-hidden rounded-xl bg-[#0f1729] font-semibold text-white shadow-md [perspective:1000px]">
 									<div className="relative h-full w-full transition-transform duration-300 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)]">
@@ -51,7 +51,7 @@ export default function RecruitmentPage() {
 								</button>
 							</Link>
 
-							<ButtonLink href="/pricing" variant="outline" size="lg" className="slide-hover">
+							<ButtonLink href="/pricing" variant="outline" size="lg" className="">
 								<span className="slide-hover-label">View Pricing</span>
 							</ButtonLink>
 						</div>
@@ -136,10 +136,10 @@ export default function RecruitmentPage() {
 										</div>
 										<div className="rounded-2xl border border-border bg-white p-5">
 											<p className="text-2xl font-bold text-primary">92%</p>
-											<p className="mt-1 text-sm text-muted-foreground">Retention after 6 months</p>
+											<p className="mt-1 text-sm text-muted-foreground">Retention after 3 months</p>
 										</div>
 										<div className="rounded-2xl border border-border bg-white p-5">
-											<p className="text-2xl font-bold text-primary">5K+</p>
+											<p className="text-2xl font-bold text-primary">1K+</p>
 											<p className="mt-1 text-sm text-muted-foreground">Candidates in our pool</p>
 										</div>
 									</div>
@@ -163,7 +163,7 @@ export default function RecruitmentPage() {
 				<div className="navy-gradient relative mx-auto max-w-[1400px] overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-12 sm:py-20">
 					<div className="pointer-events-none absolute left-1/4 top-0 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
 					<div className="relative">
-						<h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+						<h2 className="mx-auto max-w-2xl text-2xl font-bold tracking-tight text-white sm:text-4xl">
 							Looking to build your team?
 						</h2>
 						<p className="mx-auto mt-4 max-w-xl text-white/60">

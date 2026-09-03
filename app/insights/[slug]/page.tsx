@@ -62,11 +62,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 							{post.category}
 						</span>
 
-						<h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-6xl">
+						<h1 className="mt-6 text-[27px] font-bold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-6xl">
 							{post.title}
 						</h1>
 
-						<p className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-muted-foreground sm:text-[17px]">
+						<p className="mx-auto mt-6 max-w-3xl text-[15px] text-muted-foreground sm:text-[17px]">
 							{post.description}
 						</p>
 

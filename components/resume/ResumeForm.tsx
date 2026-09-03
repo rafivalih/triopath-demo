@@ -284,7 +284,7 @@ export const ResumeForm: React.FC = () => {
 	const skillCategories = getNormalizedSkillCategories();
 
 	return (
-		<div className="space-y-6 p-6">
+		<div className="space-y-4 py-6">
 			{/* 1. TEMPLATE SELECTOR */}
 			<div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
 				<div className="mb-3">

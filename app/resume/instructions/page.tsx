@@ -49,7 +49,7 @@ const instructions = [
 ];
 
 export default function ResumeInstructionsPage() {
-	const [showAll, setShowAll] = useState(true);
+	const [showAll, setShowAll] = useState(false);
 
 	const visibleInstructions = showAll ? instructions : instructions.slice(0, 7);
 
@@ -106,7 +106,7 @@ export default function ResumeInstructionsPage() {
                   tracking-tight
                   text-slate-950
                   sm:text-4xl
-                "
+                " id='resumeinstructions'
 							>
 								Resume Instructions
 							</h1>
@@ -161,7 +161,7 @@ export default function ResumeInstructionsPage() {
 								</h2>
 
 								{/* Bullet List */}
-								<div className="mt-3 space-y-1.5">
+								<div className="mt-3 space-y-1.5 " id='Instructions' >
 									{visibleInstructions.map((instruction, index) => (
 										<p
 											key={index}

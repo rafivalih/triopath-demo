@@ -71,25 +71,28 @@ const approachSteps = [
 
 export default function AboutPage() {
 	return (
-		<div className="pt-[90px]">
-			<section className="aboutus relative overflow-hidden py-14 sm:py-20">
+		<div className="sm:pt-[90px] pt-[70px]">
+			{/* <section className="aboutus relative overflow-hidden py-14 sm:py-20">
 				<div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
 				<div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 					<Reveal>
-						<p className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent mt-6">
+						<p className="mb-4 text-sm font-semibold uppercase tracking-wider text-blue-700 mt-6">
 							About TRIOPATH Careers
 						</p>
-						<h1 className="text-4xl font-bold tracking-tight text-primary sm:text-[50px] mt-5">
+						<h1 className="text-xl font-bold tracking-tight text-primary sm:text-[50px] mt-2">
 							We help careers move forward
 						</h1>
-						<p className="mx-auto mt-6 max-w-2xl text-md leading-relaxed text-muted-foreground">
+						<p className="mx-auto mt-6 max-w-2xl text-md leading-relaxed ">
 							TRIOPATH Careers was founded on a simple belief: every candidate deserves a path
 							forward. We combine expert career guidance, resume optimization, recruitment, and
 							staffing to help professionals and employers find their perfect match.
 						</p>
 					</Reveal>
 				</div>
-			</section>
+			</section> */}
+						<p className=" text-xl font-semibold uppercase tracking-wider text-blue-700 mt-6 text-center">
+							About TRIOPATH Careers
+						</p>
 
 			<section className="section-tight bg-white">
 				<div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -188,7 +191,7 @@ export default function AboutPage() {
 						</Reveal>
 
 						<Stagger>
-							<div className="relative mt-10 grid gap-5 sm:mt-12 md:grid-cols-2 lg:grid-cols-4">
+							<div className="relative mt-1 grid gap-5 sm:mt-5 md:grid-cols-2 lg:grid-cols-4">
 								{/* Connecting line - desktop */}
 								<div className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-8 hidden h-px bg-border lg:block" />
 
